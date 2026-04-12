@@ -29,7 +29,8 @@ SOURCES = mainwindow.cpp \
     appbarsettingseditor.cpp \
     autocompletesettingseditor.cpp \
     menusettingseditor.cpp \
-    tablesettingseditor.cpp
+    tablesettingseditor.cpp \
+    treesettingseditor.cpp
 
 HEADERS = mainwindow.h \
     avatarsettingseditor.h \
@@ -55,7 +56,8 @@ HEADERS = mainwindow.h \
     appbarsettingseditor.h \
     autocompletesettingseditor.h \
     menusettingseditor.h \
-    tablesettingseditor.h
+    tablesettingseditor.h \
+    treesettingseditor.h
 
 win32 {
     COMPONENTS_LIB = $$top_builddir/components/$(OBJECTS_DIR)/components.lib
