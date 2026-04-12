@@ -84,7 +84,7 @@ class QtMaterialTableDelegate : public QStyledItemDelegate
 public:
     explicit QtMaterialTableDelegate(QtMaterialTable *parent)
         : QStyledItemDelegate(parent),
-          m_table(parent)
+        m_table(parent)
     {
     }
 
@@ -100,8 +100,8 @@ public:
         initStyleOption(&opt, index);
 
         QColor background = (index.row() % 2)
-            ? m_table->alternateBackgroundColor()
-            : m_table->backgroundColor();
+                                ? m_table->alternateBackgroundColor()
+                                : m_table->backgroundColor();
 
         if (opt.state & QStyle::State_Selected) {
             background = m_table->selectedRowColor();
@@ -120,8 +120,8 @@ public:
         opt.palette.setBrush(QPalette::Highlight, QBrush(background));
 
         const QColor textColor = m_table->isEnabled()
-            ? m_table->textColor()
-            : QtMaterialStyle::instance().themeColor("disabled");
+                                     ? m_table->textColor()
+                                     : QtMaterialStyle::instance().themeColor("disabled");
 
         opt.palette.setColor(QPalette::Text, textColor);
         opt.palette.setColor(QPalette::HighlightedText, textColor);
@@ -136,25 +136,10 @@ public:
         painter->restore();
     }
 
-    QSize sizeHint(const QStyleOptionViewItem &option,
-                   const QModelIndex &index) const Q_DECL_OVERRIDE
-    {
-        QSize size = QStyledItemDelegate::sizeHint(option, index);
-        size.setHeight(m_table->isDense() ? 40 : 48);
-        return size;
-    }
-
 private:
     bool isHovered(const QModelIndex &index) const
     {
-        const QPoint pos = m_table->viewport()->mapFromGlobal(QCursor::pos());
-
-        if (!m_table->viewport()->rect().contains(pos)) {
-            return false;
-        }
-
-        const QModelIndex hovered = m_table->indexAt(pos);
-        return hovered.isValid() && hovered.row() == index.row();
+        return m_table && m_table->hoveredRow() == index.row();
     }
 
     QtMaterialTable *const m_table;
@@ -188,10 +173,13 @@ void QtMaterialTablePrivate::init()
     q->setFrameShape(QFrame::NoFrame);
     q->setWordWrap(false);
     q->setMouseTracking(true);
-    q->setHorizontalScrollMode(QAbstractItemView::ScrollPerPixel);
-    q->setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
+    q->viewport()->setMouseTracking(true);
     q->viewport()->setAttribute(Qt::WA_Hover, true);
     q->viewport()->installEventFilter(q);
+
+    q->setHorizontalScrollMode(QAbstractItemView::ScrollPerPixel);
+    q->setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
+
     q->setItemDelegate(new QtMaterialTableDelegate(q));
     q->setHorizontalHeader(new QtMaterialTableHeaderView(Qt::Horizontal, q));
     q->horizontalHeader()->setStretchLastSection(true);
@@ -199,6 +187,14 @@ void QtMaterialTablePrivate::init()
     q->horizontalHeader()->setDefaultSectionSize(160);
     q->verticalHeader()->hide();
     q->setCornerButtonEnabled(false);
+
+    QObject::connect(q, &QAbstractItemView::entered, q, [this](const QModelIndex &index) {
+        setHoveredIndex(index);
+    });
+
+    QObject::connect(q, &QAbstractItemView::viewportEntered, q, [this]() {
+        clearHoveredIndex();
+    });
 
     setupMetrics();
 }
@@ -411,19 +407,69 @@ QColor QtMaterialTable::hoverRowColor() const
     }
 }
 
+int QtMaterialTable::hoveredRow() const
+{
+    Q_D(const QtMaterialTable);
+
+    if (!d->hoveredIndex.isValid()) {
+        return -1;
+    }
+
+    return d->hoveredIndex.row();
+}
+
 bool QtMaterialTable::eventFilter(QObject *obj, QEvent *event)
 {
-    if (obj == viewport()) {
-        switch (event->type()) {
-        case QEvent::MouseMove:
-        case QEvent::HoverMove:
-        case QEvent::Leave:
-            viewport()->update();
-            break;
-        default:
-            break;
-        }
+    Q_D(QtMaterialTable);
+
+    if (obj == viewport() && event->type() == QEvent::Leave) {
+        d->clearHoveredIndex();
     }
 
     return QTableView::eventFilter(obj, event);
 }
+
+void QtMaterialTablePrivate::updateRow(const QModelIndex &index)
+{
+    Q_Q(QtMaterialTable);
+
+    if (!index.isValid() || !q->model()) {
+        return;
+    }
+
+    const int row = index.row();
+    const int columnCount = q->model()->columnCount();
+
+    for (int col = 0; col < columnCount; ++col) {
+        const QModelIndex cell = q->model()->index(row, col);
+        if (cell.isValid()) {
+            q->update(cell);
+        }
+    }
+}
+
+void QtMaterialTablePrivate::setHoveredIndex(const QModelIndex &index)
+{
+    if (hoveredIndex == index) {
+        return;
+    }
+
+    const QPersistentModelIndex oldIndex = hoveredIndex;
+    hoveredIndex = index;
+
+    updateRow(oldIndex);
+    updateRow(hoveredIndex);
+}
+
+void QtMaterialTablePrivate::clearHoveredIndex()
+{
+    if (!hoveredIndex.isValid()) {
+        return;
+    }
+
+    const QPersistentModelIndex oldIndex = hoveredIndex;
+    hoveredIndex = QPersistentModelIndex();
+    updateRow(oldIndex);
+}
+
+

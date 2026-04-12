@@ -52,6 +52,8 @@ public:
     void setHoverRowColor(const QColor &color);
     QColor hoverRowColor() const;
 
+    int hoveredRow() const;
+
 protected:
     bool eventFilter(QObject *obj, QEvent *event) Q_DECL_OVERRIDE;
 

@@ -283,6 +283,7 @@ YouTube video preview [available here](http://www.youtube.com/watch?v=21UMeNVBPU
 - [x] Floating Action Button
 - [x] Flat Button
 - [x] Icon Button
+- [x] List
 - [x] Progress
 - [x] Radio Button
 - [x] Raised Button
@@ -290,18 +291,17 @@ YouTube video preview [available here](http://www.youtube.com/watch?v=21UMeNVBPU
 - [x] Slider
 - [x] Snackbar
 - [x] Tabs
+- [x] Table
 - [x] Text Field
 - [x] Toggle
 
 #### Work in progress
 
 - [ ] Divider
-- [ ] List
 - [ ] List Item
 - [ ] Menu
 - [ ] Paper
 - [ ] Snackbar Layout
-- [ ] Table
 
 #### Not implemented 
 

@@ -19,6 +19,7 @@ SOURCES = \
     qtmaterialflatbutton.cpp \
     lib/qtmaterialstatetransition.cpp \
     qtmaterialiconbutton.cpp \
+    qtmateriallist.cpp \
     qtmaterialprogress_internal.cpp \
     qtmaterialprogress.cpp \
     qtmaterialcircularprogress_internal.cpp \
@@ -78,6 +79,8 @@ HEADERS = \
     lib/qtmaterialstatetransitionevent.h \
     qtmaterialiconbutton_p.h \
     qtmaterialiconbutton.h \
+    qtmateriallist_p.h \
+    qtmateriallist.h \
     qtmaterialprogress_internal.h \
     qtmaterialprogress_p.h \
     qtmaterialprogress.h \

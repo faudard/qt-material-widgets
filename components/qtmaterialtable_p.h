@@ -2,6 +2,7 @@
 #define QTMATERIALTABLE_P_H
 
 #include <QColor>
+#include <QPersistentModelIndex>
 
 class QtMaterialTable;
 
@@ -16,6 +17,9 @@ public:
 
     void init();
     void setupMetrics();
+    void setHoveredIndex(const QModelIndex &index);
+    void clearHoveredIndex();
+    void updateRow(const QModelIndex &index);
 
     QtMaterialTable *const q_ptr;
     bool useThemeColors;
@@ -27,6 +31,7 @@ public:
     QColor gridColor;
     QColor selectedRowColor;
     QColor hoverRowColor;
+    QPersistentModelIndex hoveredIndex;
 };
 
 #endif // QTMATERIALTABLE_P_H
