@@ -1,6 +1,7 @@
 QT += core gui widgets
 TEMPLATE = app
 CONFIG += c++11
+
 SOURCES = mainwindow.cpp \
     main.cpp \
     avatarsettingseditor.cpp \
@@ -24,6 +25,7 @@ SOURCES = mainwindow.cpp \
     appbarsettingseditor.cpp \
     autocompletesettingseditor.cpp \
     menusettingseditor.cpp
+
 HEADERS = mainwindow.h \
     avatarsettingseditor.h \
     badgesettingseditor.h \
@@ -46,10 +48,18 @@ HEADERS = mainwindow.h \
     appbarsettingseditor.h \
     autocompletesettingseditor.h \
     menusettingseditor.h
-LIBS += $$top_builddir/components/$(OBJECTS_DIR)/libcomponents.a
-INCLUDEPATH += $$top_srcdir/components/
+
+win32 {
+    COMPONENTS_LIB = $$top_builddir/components/$(OBJECTS_DIR)/components.lib
+} else {
+    COMPONENTS_LIB = $$top_builddir/components/$(OBJECTS_DIR)/libcomponents.a
+}
+
+LIBS += $$COMPONENTS_LIB
+PRE_TARGETDEPS += $$COMPONENTS_LIB
+INCLUDEPATH += $$top_srcdir/components
+
 TARGET = examples-exe
-PRE_TARGETDEPS += $$top_builddir/components/$(OBJECTS_DIR)/libcomponents.a
 
 RESOURCES += \
     examples.qrc
@@ -67,7 +77,7 @@ FORMS += \
     snackbarsettingsform.ui \
     radiobuttonsettingsform.ui \
     togglesettingsform.ui \
-    textfieldsettingsform.ui \ 
+    textfieldsettingsform.ui \
     tabssettingsform.ui \
     dialogsettingsform.ui \
     drawersettingsform.ui \
