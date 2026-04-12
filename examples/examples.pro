@@ -1,5 +1,7 @@
 QT += core gui widgets
+
 TEMPLATE = app
+
 CONFIG += c++11
 
 SOURCES = mainwindow.cpp \
@@ -24,7 +26,8 @@ SOURCES = mainwindow.cpp \
     scrollbarsettingseditor.cpp \
     appbarsettingseditor.cpp \
     autocompletesettingseditor.cpp \
-    menusettingseditor.cpp
+    menusettingseditor.cpp \
+    tablesettingseditor.cpp
 
 HEADERS = mainwindow.h \
     avatarsettingseditor.h \
@@ -47,7 +50,8 @@ HEADERS = mainwindow.h \
     scrollbarsettingseditor.h \
     appbarsettingseditor.h \
     autocompletesettingseditor.h \
-    menusettingseditor.h
+    menusettingseditor.h \
+    tablesettingseditor.h
 
 win32 {
     COMPONENTS_LIB = $$top_builddir/components/$(OBJECTS_DIR)/components.lib
