@@ -284,6 +284,7 @@ YouTube video preview [available here](http://www.youtube.com/watch?v=21UMeNVBPU
 - [x] Flat Button
 - [x] Icon Button
 - [x] List
+- [x] List Item
 - [x] Progress
 - [x] Radio Button
 - [x] Raised Button
@@ -298,7 +299,6 @@ YouTube video preview [available here](http://www.youtube.com/watch?v=21UMeNVBPU
 #### Work in progress
 
 - [ ] Divider
-- [ ] List Item
 - [ ] Menu
 - [ ] Paper
 - [ ] Snackbar Layout

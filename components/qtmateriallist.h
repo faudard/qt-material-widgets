@@ -25,7 +25,11 @@ public:
     enum ItemDataRole {
         SecondaryTextRole = Qt::UserRole + 1200,
         DividerRole,
-        FullWidthDividerRole
+        FullWidthDividerRole,
+        TrailingTextRole,
+        AvatarTextRole,
+        AvatarColorRole,
+        AvatarPixmapRole
     };
 
     explicit QtMaterialList(QWidget *parent = 0);

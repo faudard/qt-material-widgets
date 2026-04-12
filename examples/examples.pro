@@ -14,6 +14,7 @@ SOURCES = mainwindow.cpp \
     flatbuttonsettingseditor.cpp \
     iconbuttonsettingseditor.cpp \
     listsettingseditor.cpp \
+    listitemsettingseditor.cpp \
     progresssettingseditor.cpp \
     circularprogresssettingseditor.cpp \
     slidersettingseditor.cpp \
@@ -39,6 +40,7 @@ HEADERS = mainwindow.h \
     flatbuttonsettingseditor.h \
     iconbuttonsettingseditor.h \
     listsettingseditor.h \
+    listitemsettingseditor.h \
     progresssettingseditor.h \
     circularprogresssettingseditor.h \
     slidersettingseditor.h \

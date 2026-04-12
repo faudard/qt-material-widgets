@@ -16,10 +16,12 @@
 #include "fabsettingseditor.h"
 #include "flatbuttonsettingseditor.h"
 #include "iconbuttonsettingseditor.h"
+#include "listitemsettingseditor.h"
 #include "listsettingseditor.h"
 #include "menusettingseditor.h"
 #include "progresssettingseditor.h"
 #include "radiobuttonsettingseditor.h"
+#include "raisedbuttonsettingseditor.h"
 #include "scrollbarsettingseditor.h"
 #include "slidersettingseditor.h"
 #include "snackbarsettingseditor.h"
@@ -27,7 +29,6 @@
 #include "tabssettingseditor.h"
 #include "textfieldsettingseditor.h"
 #include "togglesettingseditor.h"
-#include "raisedbuttonsettingseditor.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -52,6 +53,7 @@ MainWindow::MainWindow(QWidget *parent)
     FlatButtonSettingsEditor *flatButton = new FlatButtonSettingsEditor;
     IconButtonSettingsEditor *iconButton = new IconButtonSettingsEditor;
     ListSettingsEditor *materialList = new ListSettingsEditor;
+    ListItemSettingsEditor *listItem = new ListItemSettingsEditor;
     ProgressSettingsEditor *progress = new ProgressSettingsEditor;
     CircularProgressSettingsEditor *circularProgress = new CircularProgressSettingsEditor;
     SliderSettingsEditor *slider = new SliderSettingsEditor;
@@ -80,6 +82,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(flatButton);
     stack->addWidget(iconButton);
     stack->addWidget(materialList);
+    stack->addWidget(listItem);
     stack->addWidget(menu);
     stack->addWidget(progress);
     stack->addWidget(radioButton);
@@ -104,6 +107,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Flat Button");
     list->addItem("Icon Button");
     list->addItem("List");
+    list->addItem("List Item");
     list->addItem("Menu");
     list->addItem("Progress");
     list->addItem("Radio Button");

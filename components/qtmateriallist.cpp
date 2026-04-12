@@ -4,9 +4,11 @@
 #include <QAbstractItemModel>
 #include <QCursor>
 #include <QEvent>
+#include <QFontMetrics>
 #include <QFrame>
 #include <QIcon>
 #include <QPainter>
+#include <QPainterPath>
 #include <QPixmap>
 #include <QStyledItemDelegate>
 
@@ -47,27 +49,41 @@ public:
         painter->save();
         painter->fillRect(rect, background);
 
-        const QVariant decorationValue = index.data(Qt::DecorationRole);
-        const bool hasDecoration = decorationValue.isValid() && !decorationValue.isNull();
         const int leftPadding = 16;
         const int rightPadding = 16;
-        const int iconTextSpacing = 16;
+        const int leadingSpacing = 16;
+        const int trailingSpacing = 12;
         const QSize iconSize = m_list->iconSize().isValid() ? m_list->iconSize() : QSize(24, 24);
+        const QSize avatarSize(40, 40);
 
-        QRect iconRect;
+        const bool hasAvatar = index.data(QtMaterialList::AvatarTextRole).isValid()
+                            || index.data(QtMaterialList::AvatarPixmapRole).isValid()
+                            || index.data(QtMaterialList::AvatarColorRole).isValid();
+        const QVariant decorationValue = index.data(Qt::DecorationRole);
+        const bool hasDecoration = decorationValue.isValid() && !decorationValue.isNull();
+
         int textLeft = rect.left() + leftPadding;
+        QRect leadingRect;
 
-        if (hasDecoration) {
-            iconRect = QRect(textLeft,
-                             rect.top() + (rect.height() - iconSize.height()) / 2,
-                             iconSize.width(),
-                             iconSize.height());
-            drawDecoration(painter, decorationValue, iconRect, enabled);
-            textLeft = iconRect.right() + iconTextSpacing;
+        if (hasAvatar) {
+            leadingRect = QRect(textLeft,
+                                rect.top() + (rect.height() - avatarSize.height()) / 2,
+                                avatarSize.width(),
+                                avatarSize.height());
+            drawAvatar(painter, index, leadingRect, enabled);
+            textLeft = leadingRect.right() + leadingSpacing;
+        } else if (hasDecoration) {
+            leadingRect = QRect(textLeft,
+                                rect.top() + (rect.height() - iconSize.height()) / 2,
+                                iconSize.width(),
+                                iconSize.height());
+            drawDecoration(painter, decorationValue, leadingRect, enabled);
+            textLeft = leadingRect.right() + leadingSpacing;
         }
 
         const QString primaryText = index.data(Qt::DisplayRole).toString();
         const QString secondaryText = index.data(QtMaterialList::SecondaryTextRole).toString();
+        const QString trailingText = index.data(QtMaterialList::TrailingTextRole).toString();
         const bool twoLine = !secondaryText.trimmed().isEmpty();
 
         QFont primaryFont(m_list->font());
@@ -81,14 +97,29 @@ public:
             ? m_list->secondaryTextColor()
             : QtMaterialStyle::instance().themeColor("disabled");
 
+        int textRight = rect.right() - rightPadding;
+        QRect trailingRect;
+        if (!trailingText.trimmed().isEmpty()) {
+            QFontMetrics trailingMetrics(secondaryFont);
+            const int trailingWidth = qMin(trailingMetrics.horizontalAdvance(trailingText) + 8,
+                                           qMax(72, rect.width() / 3));
+            trailingRect = QRect(textRight - trailingWidth,
+                                 rect.top(),
+                                 trailingWidth,
+                                 rect.height());
+            textRight = trailingRect.left() - trailingSpacing;
+        }
+
         QRect textRect(textLeft,
                        rect.top(),
-                       rect.width() - (textLeft - rect.left()) - rightPadding,
+                       qMax(0, textRight - textLeft),
                        rect.height());
 
         if (twoLine) {
             const int topPadding = m_list->isDense() ? 8 : 12;
+            const int bottomPadding = m_list->isDense() ? 8 : 12;
             const int primaryHeight = m_list->isDense() ? 18 : 20;
+
             QRect primaryRect(textRect.left(),
                               rect.top() + topPadding,
                               textRect.width(),
@@ -96,7 +127,7 @@ public:
             QRect secondaryRect(textRect.left(),
                                 primaryRect.bottom() + 2,
                                 textRect.width(),
-                                rect.bottom() - (primaryRect.bottom() + 2) - 8);
+                                qMax(0, rect.bottom() - bottomPadding - (primaryRect.bottom() + 2)));
 
             painter->setFont(primaryFont);
             painter->setPen(primaryColor);
@@ -113,6 +144,20 @@ public:
                               QFontMetrics(secondaryFont).elidedText(secondaryText,
                                                                      Qt::ElideRight,
                                                                      secondaryRect.width()));
+
+            if (!trailingRect.isNull()) {
+                QRect alignedTrailingRect(trailingRect.left(),
+                                          rect.top() + topPadding,
+                                          trailingRect.width(),
+                                          primaryHeight);
+                painter->setFont(secondaryFont);
+                painter->setPen(secondaryColor);
+                painter->drawText(alignedTrailingRect,
+                                  Qt::AlignRight | Qt::AlignVCenter | Qt::TextSingleLine,
+                                  QFontMetrics(secondaryFont).elidedText(trailingText,
+                                                                         Qt::ElideLeft,
+                                                                         alignedTrailingRect.width()));
+            }
         } else {
             painter->setFont(primaryFont);
             painter->setPen(primaryColor);
@@ -121,6 +166,16 @@ public:
                               QFontMetrics(primaryFont).elidedText(primaryText,
                                                                    Qt::ElideRight,
                                                                    textRect.width()));
+
+            if (!trailingRect.isNull()) {
+                painter->setFont(secondaryFont);
+                painter->setPen(secondaryColor);
+                painter->drawText(trailingRect,
+                                  Qt::AlignRight | Qt::AlignVCenter | Qt::TextSingleLine,
+                                  QFontMetrics(secondaryFont).elidedText(trailingText,
+                                                                         Qt::ElideLeft,
+                                                                         trailingRect.width()));
+            }
         }
 
         if (shouldDrawDivider(index)) {
@@ -140,9 +195,14 @@ public:
         Q_UNUSED(option)
 
         const bool twoLine = !index.data(QtMaterialList::SecondaryTextRole).toString().trimmed().isEmpty();
+        const bool hasAvatar = index.data(QtMaterialList::AvatarTextRole).isValid()
+                            || index.data(QtMaterialList::AvatarPixmapRole).isValid()
+                            || index.data(QtMaterialList::AvatarColorRole).isValid();
+
         const int height = twoLine
             ? (m_list->isDense() ? 60 : 72)
-            : (m_list->isDense() ? 40 : 48);
+            : (hasAvatar ? (m_list->isDense() ? 48 : 56)
+                         : (m_list->isDense() ? 40 : 48));
 
         return QSize(0, height);
     }
@@ -164,6 +224,61 @@ private:
     {
         const QVariant dividerValue = index.data(QtMaterialList::DividerRole);
         return dividerValue.isValid() ? dividerValue.toBool() : m_list->showDivider();
+    }
+
+    QColor avatarForeground(const QColor &background) const
+    {
+        const int gray = qGray(background.rgb());
+        return gray < 160 ? QColor(Qt::white) : QColor(0, 0, 0, 222);
+    }
+
+    void drawAvatar(QPainter *painter,
+                    const QModelIndex &index,
+                    const QRect &rect,
+                    bool enabled) const
+    {
+        const QVariant pixmapValue = index.data(QtMaterialList::AvatarPixmapRole);
+        if (pixmapValue.isValid() && pixmapValue.canConvert<QPixmap>()) {
+            const QPixmap pixmap = qvariant_cast<QPixmap>(pixmapValue);
+            if (!pixmap.isNull()) {
+                painter->save();
+                painter->setRenderHint(QPainter::Antialiasing);
+                QPainterPath path;
+                path.addEllipse(rect);
+                painter->setClipPath(path);
+                painter->drawPixmap(rect,
+                                    pixmap.scaled(rect.size(),
+                                                  Qt::KeepAspectRatioByExpanding,
+                                                  Qt::SmoothTransformation));
+                painter->restore();
+                return;
+            }
+        }
+
+        QColor fill = index.data(QtMaterialList::AvatarColorRole).value<QColor>();
+        if (!fill.isValid()) {
+            fill = QtMaterialStyle::instance().themeColor("primary1");
+        }
+        if (!enabled) {
+            fill.setAlpha(110);
+        }
+
+        painter->save();
+        painter->setRenderHint(QPainter::Antialiasing);
+        painter->setPen(Qt::NoPen);
+        painter->setBrush(fill);
+        painter->drawEllipse(rect);
+
+        const QString avatarText = index.data(QtMaterialList::AvatarTextRole).toString().left(2).toUpper();
+        if (!avatarText.isEmpty()) {
+            QFont font(m_list->font());
+            font.setBold(true);
+            font.setPointSizeF(qMax<qreal>(font.pointSizeF() - 1, 10));
+            painter->setFont(font);
+            painter->setPen(avatarForeground(fill));
+            painter->drawText(rect, Qt::AlignCenter, avatarText);
+        }
+        painter->restore();
     }
 
     void drawDecoration(QPainter *painter,
