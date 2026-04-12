@@ -16,6 +16,7 @@
 #include "fabsettingseditor.h"
 #include "flatbuttonsettingseditor.h"
 #include "iconbuttonsettingseditor.h"
+#include "listsettingseditor.h"
 #include "menusettingseditor.h"
 #include "progresssettingseditor.h"
 #include "radiobuttonsettingseditor.h"
@@ -50,6 +51,7 @@ MainWindow::MainWindow(QWidget *parent)
     RaisedButtonSettingsEditor *raisedButton = new RaisedButtonSettingsEditor;
     FlatButtonSettingsEditor *flatButton = new FlatButtonSettingsEditor;
     IconButtonSettingsEditor *iconButton = new IconButtonSettingsEditor;
+    ListSettingsEditor *materialList = new ListSettingsEditor;
     ProgressSettingsEditor *progress = new ProgressSettingsEditor;
     CircularProgressSettingsEditor *circularProgress = new CircularProgressSettingsEditor;
     SliderSettingsEditor *slider = new SliderSettingsEditor;
@@ -77,6 +79,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(fab);
     stack->addWidget(flatButton);
     stack->addWidget(iconButton);
+    stack->addWidget(materialList);
     stack->addWidget(menu);
     stack->addWidget(progress);
     stack->addWidget(radioButton);
@@ -100,6 +103,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Floating Action Button");
     list->addItem("Flat Button");
     list->addItem("Icon Button");
+    list->addItem("List");
     list->addItem("Menu");
     list->addItem("Progress");
     list->addItem("Radio Button");
