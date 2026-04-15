@@ -60,6 +60,7 @@ SOURCES = layouts/qtmaterialsnackbarlayout.cpp \
     qtmaterialtoggle.cpp \
     qtmaterialtoggle_internal.cpp \
     qtmaterialtoolbar.cpp \
+    qtmaterialtooltip.cpp \
     qtmaterialtree.cpp \
     qtmaterialtreeitem.cpp
 
@@ -158,6 +159,8 @@ HEADERS = layouts/qtmaterialsnackbarlayout.h \
     qtmaterialtoggle_p.h \
     qtmaterialtoolbar.h \
     qtmaterialtoolbar_p.h \
+    qtmaterialtooltip.h \
+    qtmaterialtooltip_p.h \
     qtmaterialtree.h \
     qtmaterialtree_p.h \
     qtmaterialtreeitem.h \

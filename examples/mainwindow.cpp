@@ -23,8 +23,8 @@
 #include "listitemsettingseditor.h"
 #include "listsettingseditor.h"
 #include "loadingprogresssettingseditor.h"
-#include "navigationsettingseditor.h"
 #include "menusettingseditor.h"
+#include "navigationsettingseditor.h"
 #include "papersettingseditor.h"
 #include "progresssettingseditor.h"
 #include "radiobuttonsettingseditor.h"
@@ -41,6 +41,7 @@
 #include "textfieldsettingseditor.h"
 #include "togglesettingseditor.h"
 #include "toolbarsettingseditor.h"
+#include "tooltipsettingseditor.h"
 #include "treesettingseditor.h"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -76,8 +77,8 @@ MainWindow::MainWindow(QWidget *parent)
     ListSettingsEditor *materialList = new ListSettingsEditor;
     ListItemSettingsEditor *listItem = new ListItemSettingsEditor;
     LoadingProgressSettingsEditor *loadingProgress = new LoadingProgressSettingsEditor;
-    NavigationSettingsEditor *navigation = new NavigationSettingsEditor;
     MenuSettingsEditor *menu = new MenuSettingsEditor;
+    NavigationSettingsEditor *navigation = new NavigationSettingsEditor;
     PaperSettingsEditor *paper = new PaperSettingsEditor;
     ProgressSettingsEditor *progress = new ProgressSettingsEditor;
     RadioButtonSettingsEditor *radioButton = new RadioButtonSettingsEditor;
@@ -94,6 +95,7 @@ MainWindow::MainWindow(QWidget *parent)
     TextFieldSettingsEditor *textField = new TextFieldSettingsEditor;
     ToggleSettingsEditor *toggle = new ToggleSettingsEditor;
     ToolbarSettingsEditor *toolbar = new ToolbarSettingsEditor;
+    TooltipSettingsEditor *tooltip = new TooltipSettingsEditor;
     TreeSettingsEditor *tree = new TreeSettingsEditor;
 
     stack->addWidget(appBar);
@@ -114,8 +116,8 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(materialList);
     stack->addWidget(listItem);
     stack->addWidget(loadingProgress);
-    stack->addWidget(navigation);
     stack->addWidget(menu);
+    stack->addWidget(navigation);
     stack->addWidget(paper);
     stack->addWidget(progress);
     stack->addWidget(radioButton);
@@ -132,6 +134,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(textField);
     stack->addWidget(toggle);
     stack->addWidget(toolbar);
+    stack->addWidget(tooltip);
     stack->addWidget(tree);
 
     list->addItem("App Bar");
@@ -152,8 +155,8 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("List");
     list->addItem("List Item");
     list->addItem("Loading + Progress");
-    list->addItem("Navigation Bar");
     list->addItem("Menu");
+    list->addItem("Navigation Bar");
     list->addItem("Paper");
     list->addItem("Progress");
     list->addItem("Radio Button");
@@ -170,6 +173,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Text Field");
     list->addItem("Toggle");
     list->addItem("Toolbar");
+    list->addItem("Tooltips");
     list->addItem("Tree");
 
 

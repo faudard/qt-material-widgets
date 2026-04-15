@@ -41,6 +41,7 @@ SOURCES = appbarsettingseditor.cpp \
     textfieldsettingseditor.cpp \
     togglesettingseditor.cpp \
     toolbarsettingseditor.cpp \
+    tooltipsettingseditor.cpp \
     treesettingseditor.cpp
 
 HEADERS = appbarsettingseditor.h \
@@ -81,6 +82,7 @@ HEADERS = appbarsettingseditor.h \
     textfieldsettingseditor.h \
     togglesettingseditor.h \
     toolbarsettingseditor.h \
+    tooltipsettingseditor.h \
     treesettingseditor.h
 
 win32 {
