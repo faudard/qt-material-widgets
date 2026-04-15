@@ -56,6 +56,7 @@ SOURCES = layouts/qtmaterialsnackbarlayout.cpp \
     qtmaterialslider_internal.cpp \
     qtmaterialsnackbar.cpp \
     qtmaterialsnackbar_internal.cpp \
+    qtmaterialspeeddial.cpp \
     qtmaterialstepper.cpp \
     qtmaterialtable.cpp \
     qtmaterialtabs.cpp \
@@ -160,6 +161,8 @@ HEADERS = layouts/qtmaterialsnackbarlayout.h \
     qtmaterialsnackbar.h \
     qtmaterialsnackbar_internal.h \
     qtmaterialsnackbar_p.h \
+    qtmaterialspeeddial.h \
+    qtmaterialspeeddial_p.h \
     qtmaterialstepper.h \
     qtmaterialstepper_p.h \
     qtmaterialtable.h \

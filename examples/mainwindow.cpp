@@ -1,7 +1,3 @@
-#include "sidesheetsettingseditor.h"
-
-#include "bannersettingseditor.h"
-
 #include "mainwindow.h"
 
 #include <QHBoxLayout>
@@ -13,6 +9,7 @@
 #include "autocompletesettingseditor.h"
 #include "avatarsettingseditor.h"
 #include "badgesettingseditor.h"
+#include "bannersettingseditor.h"
 #include "bottomsheetsettingseditor.h"
 #include "carouselsettingseditor.h"
 #include "checkboxsettingseditor.h"
@@ -21,6 +18,7 @@
 #include "dialogsettingseditor.h"
 #include "dividersettingseditor.h"
 #include "drawersettingseditor.h"
+#include "expansionPanelSettingsEditor.h"
 #include "fabsettingseditor.h"
 #include "flatbuttonsettingseditor.h"
 #include "gridlistsettingseditor.h"
@@ -37,11 +35,13 @@
 #include "raisedbuttonsettingseditor.h"
 #include "scrollbarsettingseditor.h"
 #include "searchfieldsettingseditor.h"
-#include "selectfieldsettingseditor.h"
 #include "segmentedbuttonsettingseditor.h"
+#include "selectfieldsettingseditor.h"
+#include "sidesheetsettingseditor.h"
 #include "slidersettingseditor.h"
 #include "snackbarlayoutsettingseditor.h"
 #include "snackbarsettingseditor.h"
+#include "speeddialsettingseditor.h"
 #include "steppersettingseditor.h"
 #include "subheadersettingseditor.h"
 #include "tablesettingseditor.h"
@@ -51,7 +51,6 @@
 #include "toolbarsettingseditor.h"
 #include "tooltipsettingseditor.h"
 #include "treesettingseditor.h"
-#include "expansionPanelSettingsEditor.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -81,6 +80,7 @@ MainWindow::MainWindow(QWidget *parent)
     DialogSettingsEditor *dialog = new DialogSettingsEditor;
     DividerSettingsEditor *divider = new DividerSettingsEditor;
     DrawerSettingsEditor *drawer = new DrawerSettingsEditor;
+    ExpansionPanelSettingsEditor *expansionPanel = new ExpansionPanelSettingsEditor(this);
     FlatButtonSettingsEditor *flatButton = new FlatButtonSettingsEditor;
     FloatingActionButtonSettingsEditor *fab = new FloatingActionButtonSettingsEditor;
     GridListSettingsEditor *gridList = new GridListSettingsEditor;
@@ -103,9 +103,9 @@ MainWindow::MainWindow(QWidget *parent)
     SliderSettingsEditor *slider = new SliderSettingsEditor;
     SnackbarSettingsEditor *snackbar = new SnackbarSettingsEditor;
     SnackbarLayoutSettingsEditor *snackbarLayout = new SnackbarLayoutSettingsEditor;
+    SpeedDialSettingsEditor *speedDial = new SpeedDialSettingsEditor;
     StepperSettingsEditor *stepper = new StepperSettingsEditor;
     SubheaderSettingsEditor *subheader = new SubheaderSettingsEditor;
-    ExpansionPanelSettingsEditor *expansionPanel = new ExpansionPanelSettingsEditor(this);
     TableSettingsEditor *table = new TableSettingsEditor;
     TabsSettingsEditor *tabs = new TabsSettingsEditor;
     TextFieldSettingsEditor *textField = new TextFieldSettingsEditor;
@@ -127,6 +127,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(dialog);
     stack->addWidget(divider);
     stack->addWidget(drawer);
+    stack->addWidget(expansionPanel);
     stack->addWidget(flatButton);
     stack->addWidget(fab);
     stack->addWidget(gridList);
@@ -149,6 +150,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(slider);
     stack->addWidget(snackbar);
     stack->addWidget(snackbarLayout);
+    stack->addWidget(speedDial);
     stack->addWidget(stepper);
     stack->addWidget(subheader);
     stack->addWidget(table);
@@ -158,7 +160,6 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(toolbar);
     stack->addWidget(tooltip);
     stack->addWidget(tree);
-    stack->addWidget(expansionPanel);
 
     list->addItem("App Bar");
     list->addItem("Auto Complete");
@@ -173,6 +174,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Dialog");
     list->addItem("Divider");
     list->addItem("Drawer");
+    list->addItem("Expansion Panel");
     list->addItem("Flat Button");
     list->addItem("Floating Action Button");
     list->addItem("Grid List");
@@ -195,6 +197,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Slider");
     list->addItem("Snackbar");
     list->addItem("Snackbar Layout");
+    list->addItem("Speed Dial");
     list->addItem("Stepper");
     list->addItem("Subheaders");
     list->addItem("Table");
@@ -204,7 +207,6 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Toolbar");
     list->addItem("Tooltips");
     list->addItem("Tree");
-    list->addItem("Expansion Panel");
 
 
     list->setCurrentRow(0);
