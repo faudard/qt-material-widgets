@@ -36,6 +36,7 @@
 #include "snackbarlayoutsettingseditor.h"
 #include "snackbarsettingseditor.h"
 #include "steppersettingseditor.h"
+#include "subheadersettingseditor.h"
 #include "tablesettingseditor.h"
 #include "tabssettingseditor.h"
 #include "textfieldsettingseditor.h"
@@ -90,6 +91,7 @@ MainWindow::MainWindow(QWidget *parent)
     SnackbarSettingsEditor *snackbar = new SnackbarSettingsEditor;
     SnackbarLayoutSettingsEditor *snackbarLayout = new SnackbarLayoutSettingsEditor;
     StepperSettingsEditor *stepper = new StepperSettingsEditor;
+    SubheaderSettingsEditor *subheader = new SubheaderSettingsEditor;
     TableSettingsEditor *table = new TableSettingsEditor;
     TabsSettingsEditor *tabs = new TabsSettingsEditor;
     TextFieldSettingsEditor *textField = new TextFieldSettingsEditor;
@@ -129,6 +131,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(snackbar);
     stack->addWidget(snackbarLayout);
     stack->addWidget(stepper);
+    stack->addWidget(subheader);
     stack->addWidget(table);
     stack->addWidget(tabs);
     stack->addWidget(textField);
@@ -168,6 +171,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Snackbar");
     list->addItem("Snackbar Layout");
     list->addItem("Stepper");
+    list->addItem("Subheaders");
     list->addItem("Table");
     list->addItem("Tabs");
     list->addItem("Text Field");
