@@ -8,6 +8,7 @@ SOURCES = appbarsettingseditor.cpp \
     autocompletesettingseditor.cpp \
     avatarsettingseditor.cpp \
     badgesettingseditor.cpp \
+    bannersettingseditor.cpp \
     bottomsheetsettingseditor.cpp \
     carouselsettingseditor.cpp \
     checkboxsettingseditor.cpp \
@@ -51,6 +52,7 @@ HEADERS = appbarsettingseditor.h \
     autocompletesettingseditor.h \
     avatarsettingseditor.h \
     badgesettingseditor.h \
+    bannersettingseditor.h \
     bottomsheetsettingseditor.h \
     carouselsettingseditor.h \
     checkboxsettingseditor.h \

@@ -1,3 +1,5 @@
+#include "bannersettingseditor.h"
+
 #include "mainwindow.h"
 
 #include <QHBoxLayout>
@@ -67,6 +69,7 @@ MainWindow::MainWindow(QWidget *parent)
     AutoCompleteSettingsEditor *autocomplete = new AutoCompleteSettingsEditor;
     AvatarSettingsEditor *avatar = new AvatarSettingsEditor;
     BadgeSettingsEditor *badge = new BadgeSettingsEditor;
+    BannerSettingsEditor *banner = new BannerSettingsEditor;
     BottomSheetSettingsEditor *bottomsheet = new BottomSheetSettingsEditor;
     CarouselSettingsEditor *carousel = new CarouselSettingsEditor;
     CheckBoxSettingsEditor *checkbox = new CheckBoxSettingsEditor;
@@ -91,8 +94,8 @@ MainWindow::MainWindow(QWidget *parent)
     RaisedButtonSettingsEditor *raisedButton = new RaisedButtonSettingsEditor;
     ScrollBarSettingsEditor *scrollBar = new ScrollBarSettingsEditor;
     SearchFieldSettingsEditor *searchField = new SearchFieldSettingsEditor;
-    SelectFieldSettingsEditor *selectField = new SelectFieldSettingsEditor;
     SegmentedButtonSettingsEditor *segmentedButton = new SegmentedButtonSettingsEditor;
+    SelectFieldSettingsEditor *selectField = new SelectFieldSettingsEditor;
     SliderSettingsEditor *slider = new SliderSettingsEditor;
     SnackbarSettingsEditor *snackbar = new SnackbarSettingsEditor;
     SnackbarLayoutSettingsEditor *snackbarLayout = new SnackbarLayoutSettingsEditor;
@@ -110,6 +113,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(autocomplete);
     stack->addWidget(avatar);
     stack->addWidget(badge);
+    stack->addWidget(banner);
     stack->addWidget(bottomsheet);
     stack->addWidget(carousel);
     stack->addWidget(checkbox);
@@ -134,8 +138,8 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(raisedButton);
     stack->addWidget(scrollBar);
     stack->addWidget(searchField);
-    stack->addWidget(selectField);
     stack->addWidget(segmentedButton);
+    stack->addWidget(selectField);
     stack->addWidget(slider);
     stack->addWidget(snackbar);
     stack->addWidget(snackbarLayout);
@@ -153,6 +157,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Auto Complete");
     list->addItem("Avatar");
     list->addItem("Badge");
+    list->addItem(QStringLiteral("Banner"));
     list->addItem("BottomSheet");
     list->addItem("Carousel");
     list->addItem("Checkbox");
@@ -177,8 +182,8 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Raised Button");
     list->addItem("ScrollBar");
     list->addItem("Search Field");
-    list->addItem("Select Field");
     list->addItem("Segmented Button");
+    list->addItem("Select Field");
     list->addItem("Slider");
     list->addItem("Snackbar");
     list->addItem("Snackbar Layout");
