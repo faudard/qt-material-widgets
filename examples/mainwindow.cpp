@@ -16,6 +16,7 @@
 #include "drawersettingseditor.h"
 #include "fabsettingseditor.h"
 #include "flatbuttonsettingseditor.h"
+#include "gridlistsettingseditor.h"
 #include "iconbuttonsettingseditor.h"
 #include "listitemsettingseditor.h"
 #include "listsettingseditor.h"
@@ -55,6 +56,7 @@ MainWindow::MainWindow(QWidget *parent)
     FloatingActionButtonSettingsEditor *fab = new FloatingActionButtonSettingsEditor;
     RaisedButtonSettingsEditor *raisedButton = new RaisedButtonSettingsEditor;
     FlatButtonSettingsEditor *flatButton = new FlatButtonSettingsEditor;
+    GridListSettingsEditor *gridList = new GridListSettingsEditor;
     IconButtonSettingsEditor *iconButton = new IconButtonSettingsEditor;
     ListSettingsEditor *materialList = new ListSettingsEditor;
     ListItemSettingsEditor *listItem = new ListItemSettingsEditor;
@@ -89,6 +91,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(drawer);
     stack->addWidget(fab);
     stack->addWidget(flatButton);
+    stack->addWidget(gridList);
     stack->addWidget(iconButton);
     stack->addWidget(materialList);
     stack->addWidget(listItem);
@@ -118,6 +121,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Drawer");
     list->addItem("Floating Action Button");
     list->addItem("Flat Button");
+    list->addItem("Grid List");
     list->addItem("Icon Button");
     list->addItem("List");
     list->addItem("List Item");

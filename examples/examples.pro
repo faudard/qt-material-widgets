@@ -32,7 +32,8 @@ SOURCES = mainwindow.cpp \
     menusettingseditor.cpp \
     tablesettingseditor.cpp \
     treesettingseditor.cpp \
-    papersettingseditor.cpp
+    papersettingseditor.cpp \
+    gridlistsettingseditor.cpp
 
 HEADERS = mainwindow.h \
     avatarsettingseditor.h \
@@ -61,7 +62,8 @@ HEADERS = mainwindow.h \
     menusettingseditor.h \
     tablesettingseditor.h \
     treesettingseditor.h \
-    papersettingseditor.h
+    papersettingseditor.h \
+    gridlistsettingseditor.h
 
 win32 {
     COMPONENTS_LIB = $$top_builddir/components/$(OBJECTS_DIR)/components.lib
