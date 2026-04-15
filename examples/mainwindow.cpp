@@ -28,6 +28,7 @@
 #include "scrollbarsettingseditor.h"
 #include "slidersettingseditor.h"
 #include "searchfieldsettingseditor.h"
+#include "selectfieldsettingseditor.h"
 #include "snackbarlayoutsettingseditor.h"
 #include "snackbarsettingseditor.h"
 #include "tablesettingseditor.h"
@@ -69,6 +70,7 @@ MainWindow::MainWindow(QWidget *parent)
     TextFieldSettingsEditor *textField = new TextFieldSettingsEditor;
     TabsSettingsEditor *tabs = new TabsSettingsEditor;
     SearchFieldSettingsEditor *searchField = new SearchFieldSettingsEditor;
+    SelectFieldSettingsEditor *selectField = new SelectFieldSettingsEditor;
     SnackbarSettingsEditor *snackbar = new SnackbarSettingsEditor;
     SnackbarLayoutSettingsEditor *snackbarLayout = new SnackbarLayoutSettingsEditor;
     DialogSettingsEditor *dialog = new DialogSettingsEditor;
@@ -107,6 +109,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(snackbar);
     stack->addWidget(snackbarLayout);
     stack->addWidget(searchField);
+    stack->addWidget(selectField);
     stack->addWidget(table);
     stack->addWidget(tabs);
     stack->addWidget(textField);
@@ -138,6 +141,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Snackbar");
     list->addItem("Snackbar Layout");
     list->addItem("Search Field");
+    list->addItem("Select Field");
     list->addItem("Table");
     list->addItem("Tabs");
     list->addItem("Text Field");
