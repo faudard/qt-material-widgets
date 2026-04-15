@@ -47,3 +47,8 @@ void test_qtmateriallist::accepts_model()
     model.appendRow(new QtMaterialListItem("Item 2", "Secondary 2"));
 
     list.setModel(&model);
+}
+
+
+QTEST_MAIN(test_qtmateriallist)
+#include "test_qtmateriallist.moc"

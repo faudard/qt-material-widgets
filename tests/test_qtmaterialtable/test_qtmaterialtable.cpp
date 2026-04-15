@@ -55,3 +55,10 @@ void test_qtmaterialtable::accepts_model()
 }
 
 void test_qtmaterialtable::hovered_row_is_invalid_by_default()
+{
+    QtMaterialTable table;
+    QCOMPARE(table.hoveredRow(), -1);
+}
+
+QTEST_MAIN(test_qtmaterialtable)
+#include "test_qtmaterialtable.moc"

@@ -59,3 +59,7 @@ void test_qtmateriallistitem::stores_avatar_data()
     pixmap.fill(Qt::black);
     item.setAvatarPixmap(pixmap);
     QVERIFY(!item.avatarPixmap().isNull());
+}
+
+QTEST_MAIN(test_qtmateriallistitem)
+#include "test_qtmateriallistitem.moc"
