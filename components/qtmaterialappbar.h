@@ -31,6 +31,7 @@ public:
     inline QHBoxLayout *appBarLayout() const;
 
 protected:
+    explicit QtMaterialAppBar(QtMaterialAppBarPrivate &d, QWidget *parent = 0);
     void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
 
     const QScopedPointer<QtMaterialAppBarPrivate> d_ptr;

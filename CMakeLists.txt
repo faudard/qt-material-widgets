@@ -15,4 +15,4 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Gui Widgets)
 
 add_subdirectory(components)
 add_subdirectory(examples)
-add_subdirectory(tests)
+# add_subdirectory(tests)

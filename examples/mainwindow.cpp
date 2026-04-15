@@ -36,6 +36,7 @@
 #include "tabssettingseditor.h"
 #include "textfieldsettingseditor.h"
 #include "togglesettingseditor.h"
+#include "toolbarsettingseditor.h"
 #include "treesettingseditor.h"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -84,6 +85,7 @@ MainWindow::MainWindow(QWidget *parent)
     PaperSettingsEditor *paper = new PaperSettingsEditor;
     MenuSettingsEditor *menu = new MenuSettingsEditor;
     TableSettingsEditor *table = new TableSettingsEditor;
+    ToolbarSettingsEditor *toolbar = new ToolbarSettingsEditor;
     TreeSettingsEditor *tree = new TreeSettingsEditor;
 
     stack->addWidget(appBar);
@@ -117,6 +119,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(tabs);
     stack->addWidget(textField);
     stack->addWidget(toggle);
+    stack->addWidget(toolbar);
     stack->addWidget(tree);
 
     list->addItem("App Bar");
@@ -150,6 +153,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Tabs");
     list->addItem("Text Field");
     list->addItem("Toggle");
+    list->addItem("Toolbar");
     list->addItem("Tree");
 
     list->setCurrentRow(0);

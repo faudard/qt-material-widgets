@@ -12,15 +12,15 @@ class QtMaterialAppBarPrivate
     Q_DECLARE_PUBLIC(QtMaterialAppBar)
 
 public:
-    QtMaterialAppBarPrivate(QtMaterialAppBar *q);
-    ~QtMaterialAppBarPrivate();
+    explicit QtMaterialAppBarPrivate(QtMaterialAppBar *q);
+    virtual ~QtMaterialAppBarPrivate();
 
     void init();
 
     QtMaterialAppBar *const q_ptr;
-    bool                    useThemeColors;
-    QColor                  foregroundColor;
-    QColor                  backgroundColor;
+    bool useThemeColors;
+    QColor foregroundColor;
+    QColor backgroundColor;
 };
 
 #endif // QTMATERIALAPPBAR_P_H

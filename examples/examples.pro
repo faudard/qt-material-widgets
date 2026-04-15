@@ -36,7 +36,8 @@ SOURCES = mainwindow.cpp \
     gridlistsettingseditor.cpp \
     searchfieldsettingseditor.cpp \
     selectfieldsettingseditor.cpp \
-    steppersettingseditor.cpp
+    steppersettingseditor.cpp \
+    toolbarsettingseditor.cpp
 
 HEADERS = mainwindow.h \
     avatarsettingseditor.h \
@@ -71,7 +72,8 @@ HEADERS = mainwindow.h \
     qtmaterialselectfield.h \
     qtmaterialselectfield_p.h \
     selectfieldsettingseditor.h \
-    steppersettingseditor.h
+    steppersettingseditor.h \
+    toolbarsettingseditor.h
 
 win32 {
     COMPONENTS_LIB = $$top_builddir/components/$(OBJECTS_DIR)/components.lib

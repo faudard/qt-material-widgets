@@ -1,7 +1,9 @@
 #include "qtmaterialappbar.h"
 #include "qtmaterialappbar_p.h"
+
 #include <QtWidgets/QGraphicsDropShadowEffect>
 #include <QPainter>
+
 #include "lib/qtmaterialstyle.h"
 
 /*!
@@ -49,8 +51,13 @@ void QtMaterialAppBarPrivate::init()
  */
 
 QtMaterialAppBar::QtMaterialAppBar(QWidget *parent)
+    : QtMaterialAppBar(*new QtMaterialAppBarPrivate(this), parent)
+{
+}
+
+QtMaterialAppBar::QtMaterialAppBar(QtMaterialAppBarPrivate &d, QWidget *parent)
     : QWidget(parent),
-      d_ptr(new QtMaterialAppBarPrivate(this))
+    d_ptr(&d)
 {
     d_func()->init();
 }
@@ -98,7 +105,7 @@ void QtMaterialAppBar::setForegroundColor(const QColor &color)
 
     d->foregroundColor = color;
 
-    if (d->useThemeColors == true) {
+    if (d->useThemeColors) {
         d->useThemeColors = false;
     }
     update();
@@ -121,7 +128,7 @@ void QtMaterialAppBar::setBackgroundColor(const QColor &color)
 
     d->backgroundColor = color;
 
-    if (d->useThemeColors == true) {
+    if (d->useThemeColors) {
         d->useThemeColors = false;
     }
     update();
