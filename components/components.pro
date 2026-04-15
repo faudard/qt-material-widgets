@@ -36,6 +36,7 @@ SOURCES = layouts/qtmaterialsnackbarlayout.cpp \
     qtmaterialgridlist.cpp \
     qtmaterialgridlistitem.cpp \
     qtmaterialiconbutton.cpp \
+    qtmaterialimagelist.cpp \
     qtmateriallist.cpp \
     qtmateriallistitem.cpp \
     qtmaterialmenu.cpp \
@@ -132,6 +133,8 @@ HEADERS = layouts/qtmaterialsnackbarlayout.h \
     qtmaterialgridlistitem_p.h \
     qtmaterialiconbutton.h \
     qtmaterialiconbutton_p.h \
+    qtmaterialimagelist.h \
+    qtmaterialimagelist_p.h \
     qtmateriallist.h \
     qtmateriallist_p.h \
     qtmateriallistitem.h \

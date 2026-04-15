@@ -22,6 +22,7 @@ SOURCES = appbarsettingseditor.cpp \
     flatbuttonsettingseditor.cpp \
     gridlistsettingseditor.cpp \
     iconbuttonsettingseditor.cpp \
+    imagelistsettingseditor.cpp \
     listitemsettingseditor.cpp \
     listsettingseditor.cpp \
     loadingprogresssettingseditor.cpp \
@@ -73,6 +74,7 @@ HEADERS = appbarsettingseditor.h \
     flatbuttonsettingseditor.h \
     gridlistsettingseditor.h \
     iconbuttonsettingseditor.h \
+    imagelistsettingseditor.h \
     listitemsettingseditor.h \
     listsettingseditor.h \
     loadingprogresssettingseditor.h \

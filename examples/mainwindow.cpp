@@ -25,6 +25,7 @@
 #include "flatbuttonsettingseditor.h"
 #include "gridlistsettingseditor.h"
 #include "iconbuttonsettingseditor.h"
+#include "imagelistsettingseditor.h"
 #include "listitemsettingseditor.h"
 #include "listsettingseditor.h"
 #include "loadingprogresssettingseditor.h"
@@ -93,6 +94,7 @@ MainWindow::MainWindow(QWidget *parent)
     FloatingActionButtonSettingsEditor *fab = new FloatingActionButtonSettingsEditor;
     GridListSettingsEditor *gridList = new GridListSettingsEditor;
     IconButtonSettingsEditor *iconButton = new IconButtonSettingsEditor;
+    ImageListSettingsEditor *imageList = new ImageListSettingsEditor(this);
     ListSettingsEditor *materialList = new ListSettingsEditor;
     ListItemSettingsEditor *listItem = new ListItemSettingsEditor;
     LoadingProgressSettingsEditor *loadingProgress = new LoadingProgressSettingsEditor;
@@ -146,6 +148,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(fab);
     stack->addWidget(gridList);
     stack->addWidget(iconButton);
+    stack->addWidget(imageList);
     stack->addWidget(materialList);
     stack->addWidget(listItem);
     stack->addWidget(loadingProgress);
@@ -199,6 +202,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Floating Action Button");
     list->addItem("Grid List");
     list->addItem("Icon Button");
+    list->addItem("Image List");
     list->addItem("List");
     list->addItem("List Item");
     list->addItem("Loading + Progress");
