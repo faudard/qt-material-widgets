@@ -59,7 +59,9 @@ SOURCES = \
     qtmaterialselectfield.cpp \
     qtmaterialstepper.cpp \
     qtmaterialtoolbar.cpp \
-    qtmaterialcarousel.cpp
+    qtmaterialcarousel.cpp \
+    qtmaterialprogress.cpp \
+    qtmaterialcircularprogress.cpp
 
 HEADERS = \
     qtmaterialavatar_p.h \
@@ -154,7 +156,9 @@ HEADERS = \
     qtmaterialtoolbar.h \
     qtmaterialtoolbar_p.h \
     qtmaterialcarousel.h \
-    qtmaterialcarousel_p.h
+    qtmaterialcarousel_p.h \
+    qtmaterialprogress.h \
+    qtmaterialcircularprogress.h
 
 RESOURCES += \
     resources.qrc

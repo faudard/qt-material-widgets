@@ -38,7 +38,8 @@ SOURCES = mainwindow.cpp \
     selectfieldsettingseditor.cpp \
     steppersettingseditor.cpp \
     toolbarsettingseditor.cpp \
-    carouselsettingseditor.cpp
+    carouselsettingseditor.cpp \
+    loadingprogresssettingseditor.cpp
 
 HEADERS = mainwindow.h \
     avatarsettingseditor.h \
@@ -75,7 +76,8 @@ HEADERS = mainwindow.h \
     selectfieldsettingseditor.h \
     steppersettingseditor.h \
     toolbarsettingseditor.h \
-    carouselsettingseditor.h
+    carouselsettingseditor.h \
+    loadingprogresssettingseditor.h
 
 win32 {
     COMPONENTS_LIB = $$top_builddir/components/$(OBJECTS_DIR)/components.lib
