@@ -34,6 +34,7 @@
 #include "scrollbarsettingseditor.h"
 #include "searchfieldsettingseditor.h"
 #include "selectfieldsettingseditor.h"
+#include "segmentedbuttonsettingseditor.h"
 #include "slidersettingseditor.h"
 #include "snackbarlayoutsettingseditor.h"
 #include "snackbarsettingseditor.h"
@@ -91,6 +92,7 @@ MainWindow::MainWindow(QWidget *parent)
     ScrollBarSettingsEditor *scrollBar = new ScrollBarSettingsEditor;
     SearchFieldSettingsEditor *searchField = new SearchFieldSettingsEditor;
     SelectFieldSettingsEditor *selectField = new SelectFieldSettingsEditor;
+    SegmentedButtonSettingsEditor *segmentedButton = new SegmentedButtonSettingsEditor;
     SliderSettingsEditor *slider = new SliderSettingsEditor;
     SnackbarSettingsEditor *snackbar = new SnackbarSettingsEditor;
     SnackbarLayoutSettingsEditor *snackbarLayout = new SnackbarLayoutSettingsEditor;
@@ -133,6 +135,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(scrollBar);
     stack->addWidget(searchField);
     stack->addWidget(selectField);
+    stack->addWidget(segmentedButton);
     stack->addWidget(slider);
     stack->addWidget(snackbar);
     stack->addWidget(snackbarLayout);
@@ -175,6 +178,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("ScrollBar");
     list->addItem("Search Field");
     list->addItem("Select Field");
+    list->addItem("Segmented Button");
     list->addItem("Slider");
     list->addItem("Snackbar");
     list->addItem("Snackbar Layout");
@@ -187,7 +191,6 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Toolbar");
     list->addItem("Tooltips");
     list->addItem("Tree");
-
 
 
     list->setCurrentRow(0);

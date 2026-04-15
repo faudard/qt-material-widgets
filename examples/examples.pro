@@ -33,6 +33,7 @@ SOURCES = appbarsettingseditor.cpp \
     raisedbuttonsettingseditor.cpp \
     scrollbarsettingseditor.cpp \
     searchfieldsettingseditor.cpp \
+    segmentedbuttonsettingseditor.cpp \
     selectfieldsettingseditor.cpp \
     slidersettingseditor.cpp \
     snackbarlayoutsettingseditor.cpp \
@@ -76,6 +77,7 @@ HEADERS = appbarsettingseditor.h \
     raisedbuttonsettingseditor.h \
     scrollbarsettingseditor.h \
     searchfieldsettingseditor.h \
+    segmentedbuttonsettingseditor.h \
     selectfieldsettingseditor.h \
     slidersettingseditor.h \
     snackbarlayoutsettingseditor.h \

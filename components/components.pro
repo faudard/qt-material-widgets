@@ -47,6 +47,7 @@ SOURCES = layouts/qtmaterialsnackbarlayout.cpp \
     qtmaterialscrollbar.cpp \
     qtmaterialscrollbar_internal.cpp \
     qtmaterialsearchfield.cpp \
+    qtmaterialsegmentedbutton.cpp \
     qtmaterialselectfield.cpp \
     qtmaterialslider.cpp \
     qtmaterialslider_internal.cpp \
@@ -142,6 +143,8 @@ HEADERS = layouts/qtmaterialsnackbarlayout.h \
     qtmaterialscrollbar_p.h \
     qtmaterialsearchfield.h \
     qtmaterialsearchfield_p.h \
+    qtmaterialsegmentedbutton.h \
+    qtmaterialsegmentedbutton_p.h \
     qtmaterialslider.h \
     qtmaterialslider_internal.h \
     qtmaterialslider_p.h \
