@@ -26,6 +26,7 @@
 #include "raisedbuttonsettingseditor.h"
 #include "scrollbarsettingseditor.h"
 #include "slidersettingseditor.h"
+#include "snackbarlayoutsettingseditor.h"
 #include "snackbarsettingseditor.h"
 #include "tablesettingseditor.h"
 #include "tabssettingseditor.h"
@@ -65,6 +66,7 @@ MainWindow::MainWindow(QWidget *parent)
     TextFieldSettingsEditor *textField = new TextFieldSettingsEditor;
     TabsSettingsEditor *tabs = new TabsSettingsEditor;
     SnackbarSettingsEditor *snackbar = new SnackbarSettingsEditor;
+    SnackbarLayoutSettingsEditor *snackbarLayout = new SnackbarLayoutSettingsEditor;
     DialogSettingsEditor *dialog = new DialogSettingsEditor;
     DividerSettingsEditor *divider = new DividerSettingsEditor;
     DrawerSettingsEditor *drawer = new DrawerSettingsEditor;
@@ -98,6 +100,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(scrollBar);
     stack->addWidget(slider);
     stack->addWidget(snackbar);
+    stack->addWidget(snackbarLayout);
     stack->addWidget(table);
     stack->addWidget(tabs);
     stack->addWidget(textField);
@@ -126,6 +129,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("ScrollBar");
     list->addItem("Slider");
     list->addItem("Snackbar");
+    list->addItem("Snackbar Layout");
     list->addItem("Table");
     list->addItem("Tabs");
     list->addItem("Text Field");

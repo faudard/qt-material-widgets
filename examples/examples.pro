@@ -23,6 +23,7 @@ SOURCES = mainwindow.cpp \
     textfieldsettingseditor.cpp \
     tabssettingseditor.cpp \
     snackbarsettingseditor.cpp \
+    snackbarlayoutsettingseditor.cpp \
     dialogsettingseditor.cpp \
     drawersettingseditor.cpp \
     scrollbarsettingseditor.cpp \
@@ -51,6 +52,7 @@ HEADERS = mainwindow.h \
     textfieldsettingseditor.h \
     tabssettingseditor.h \
     snackbarsettingseditor.h \
+    snackbarlayoutsettingseditor.h \
     dialogsettingseditor.h \
     drawersettingseditor.h \
     scrollbarsettingseditor.h \
