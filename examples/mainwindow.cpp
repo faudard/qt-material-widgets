@@ -51,6 +51,7 @@
 #include "snackbarlayoutsettingseditor.h"
 #include "snackbarsettingseditor.h"
 #include "speeddialsettingseditor.h"
+#include "splitbuttonsettingseditor.h"
 #include "steppersettingseditor.h"
 #include "subheadersettingseditor.h"
 #include "tablesettingseditor.h"
@@ -122,6 +123,7 @@ MainWindow::MainWindow(QWidget *parent)
     SnackbarSettingsEditor *snackbar = new SnackbarSettingsEditor;
     SnackbarLayoutSettingsEditor *snackbarLayout = new SnackbarLayoutSettingsEditor;
     SpeedDialSettingsEditor *speedDial = new SpeedDialSettingsEditor;
+    SplitButtonSettingsEditor *splitButton = new SplitButtonSettingsEditor(this);
     StepperSettingsEditor *stepper = new StepperSettingsEditor;
     SubheaderSettingsEditor *subheader = new SubheaderSettingsEditor;
     TableSettingsEditor *table = new TableSettingsEditor;
@@ -178,6 +180,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(snackbar);
     stack->addWidget(snackbarLayout);
     stack->addWidget(speedDial);
+    stack->addWidget(splitButton);
     stack->addWidget(stepper);
     stack->addWidget(subheader);
     stack->addWidget(table);
@@ -234,6 +237,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Snackbar");
     list->addItem("Snackbar Layout");
     list->addItem("Speed Dial");
+    list->addItem("Split Button");
     list->addItem("Stepper");
     list->addItem("Subheaders");
     list->addItem("Table");

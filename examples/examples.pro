@@ -48,6 +48,7 @@ SOURCES = appbarsettingseditor.cpp \
     snackbarlayoutsettingseditor.cpp \
     snackbarsettingseditor.cpp \
     speeddialsettingseditor.cpp \
+    splitbuttonsettingseditor.cpp \
     steppersettingseditor.cpp \
     tablesettingseditor.cpp \
     tabssettingseditor.cpp \
@@ -102,6 +103,7 @@ HEADERS = appbarsettingseditor.h \
     snackbarlayoutsettingseditor.h \
     snackbarsettingseditor.h \
     speeddialsettingseditor.h \
+    splitbuttonsettingseditor.h \
     steppersettingseditor.h \
     tablesettingseditor.h \
     tabssettingseditor.h \
