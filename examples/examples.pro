@@ -24,6 +24,7 @@ SOURCES = appbarsettingseditor.cpp \
     main.cpp \
     mainwindow.cpp \
     menusettingseditor.cpp \
+    navigationsettingseditor.cpp \
     papersettingseditor.cpp \
     progresssettingseditor.cpp \
     radiobuttonsettingseditor.cpp \
@@ -61,6 +62,7 @@ HEADERS = appbarsettingseditor.h \
     loadingprogresssettingseditor.h \
     mainwindow.h \
     menusettingseditor.h \
+    navigationsettingseditor.h \
     papersettingseditor.h \
     progresssettingseditor.h \
     qtmaterialselectfield.h \

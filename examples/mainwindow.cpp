@@ -23,6 +23,7 @@
 #include "listitemsettingseditor.h"
 #include "listsettingseditor.h"
 #include "loadingprogresssettingseditor.h"
+#include "navigationsettingseditor.h"
 #include "menusettingseditor.h"
 #include "papersettingseditor.h"
 #include "progresssettingseditor.h"
@@ -148,7 +149,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Icon Button");
     list->addItem("List");
     list->addItem("List Item");
-    list->addItem(QStringLiteral("Loading + Progress"));
+    list->addItem("Loading + Progress");
     list->addItem("Menu");
     list->addItem("Paper");
     list->addItem("Progress");

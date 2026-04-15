@@ -36,6 +36,7 @@ SOURCES = layouts/qtmaterialsnackbarlayout.cpp \
     qtmateriallistitem.cpp \
     qtmaterialmenu.cpp \
     qtmaterialmenu_internal.cpp \
+    qtmaterialnavigationbar.cpp \
     qtmaterialpaper.cpp \
     qtmaterialprogress.cpp \
     qtmaterialprogress_internal.cpp \
@@ -118,6 +119,8 @@ HEADERS = layouts/qtmaterialsnackbarlayout.h \
     qtmaterialmenu.h \
     qtmaterialmenu_internal.h \
     qtmaterialmenu_p.h \
+    qtmaterialnavigationbar.h \
+    qtmaterialnavigationbar_p.h \
     qtmaterialpaper.h \
     qtmaterialpaper_p.h \
     qtmaterialprogress.h \
