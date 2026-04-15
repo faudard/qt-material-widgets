@@ -17,6 +17,7 @@ SOURCES = layouts/qtmaterialsnackbarlayout.cpp \
     qtmaterialavatar.cpp \
     qtmaterialbadge.cpp \
     qtmaterialbanner.cpp \
+    qtmaterialbottomappbar.cpp \
     qtmaterialbottomsheet.cpp \
     qtmaterialcarousel.cpp \
     qtmaterialcheckbox.cpp \
@@ -96,6 +97,8 @@ HEADERS = layouts/qtmaterialsnackbarlayout.h \
     qtmaterialbadge_p.h \
     qtmaterialbanner.h \
     qtmaterialbanner_p.h \
+    qtmaterialbottomappbar.h \
+    qtmaterialbottomappbar_p.h \
     qtmaterialbottomsheet.h \
     qtmaterialbottomsheet_p.h \
     qtmaterialcarousel.h \

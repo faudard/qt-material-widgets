@@ -10,6 +10,7 @@
 #include "avatarsettingseditor.h"
 #include "badgesettingseditor.h"
 #include "bannersettingseditor.h"
+#include "bottomappbarsettingseditor.h"
 #include "bottomsheetsettingseditor.h"
 #include "carouselsettingseditor.h"
 #include "checkboxsettingseditor.h"
@@ -72,6 +73,7 @@ MainWindow::MainWindow(QWidget *parent)
     AvatarSettingsEditor *avatar = new AvatarSettingsEditor;
     BadgeSettingsEditor *badge = new BadgeSettingsEditor;
     BannerSettingsEditor *banner = new BannerSettingsEditor;
+    BottomAppBarSettingsEditor *bottomAppBar = new BottomAppBarSettingsEditor;
     BottomSheetSettingsEditor *bottomsheet = new BottomSheetSettingsEditor;
     CarouselSettingsEditor *carousel = new CarouselSettingsEditor;
     CheckBoxSettingsEditor *checkbox = new CheckBoxSettingsEditor;
@@ -119,6 +121,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(avatar);
     stack->addWidget(badge);
     stack->addWidget(banner);
+    stack->addWidget(bottomAppBar);
     stack->addWidget(bottomsheet);
     stack->addWidget(carousel);
     stack->addWidget(checkbox);
@@ -166,6 +169,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Avatar");
     list->addItem("Badge");
     list->addItem("Banner");
+    list->addItem("Bottom App Bar");
     list->addItem("BottomSheet");
     list->addItem("Carousel");
     list->addItem("Checkbox");
