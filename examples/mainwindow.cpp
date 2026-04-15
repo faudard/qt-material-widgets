@@ -17,6 +17,7 @@
 #include "checkboxsettingseditor.h"
 #include "circularprogresssettingseditor.h"
 #include "connectedbuttongroupsettingseditor.h"
+#include "datepickervariantssettingseditor.h"
 #include "daterangepickersettingseditor.h"
 #include "datetimepickersettingseditor.h"
 #include "dialogsettingseditor.h"
@@ -92,6 +93,7 @@ MainWindow::MainWindow(QWidget *parent)
     CheckBoxSettingsEditor *checkbox = new CheckBoxSettingsEditor;
     CircularProgressSettingsEditor *circularProgress = new CircularProgressSettingsEditor;
     ConnectedButtonGroupSettingsEditor *connectedButtonGroupEditor = new ConnectedButtonGroupSettingsEditor;
+    DatePickerVariantsSettingsEditor *datePickerVariants = new DatePickerVariantsSettingsEditor;
     RaisedButtonSettingsEditor *raisedButton = new RaisedButtonSettingsEditor;
     DateTimePickerSettingsEditor *dateTimePicker = new DateTimePickerSettingsEditor;
     DialogSettingsEditor *dialog = new DialogSettingsEditor;
@@ -152,6 +154,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(checkbox);
     stack->addWidget(circularProgress);
     stack->addWidget(connectedButtonGroupEditor);
+    stack->addWidget(datePickerVariants);
     stack->addWidget(raisedButton);
     stack->addWidget(dateTimePicker);
     stack->addWidget(dialog);
@@ -212,6 +215,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Checkbox");
     list->addItem("Circular Progress");
     list->addItem("Connected Button");
+    list->addItem("Date Picker Variants");
     list->addItem("Date Range Picker");
     list->addItem("Date && Time Picker");
     list->addItem("Dialog");

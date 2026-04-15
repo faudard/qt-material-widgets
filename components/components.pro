@@ -24,10 +24,12 @@ SOURCES = layouts/qtmaterialsnackbarlayout.cpp \
     qtmaterialcheckbox.cpp \
     qtmaterialcircularprogress.cpp \
     qtmaterialcircularprogress_internal.cpp \
+    qtmaterialdatefield.cpp \
     qtmaterialdatepicker.cpp \
     qtmaterialdialog.cpp \
     qtmaterialdialog_internal.cpp \
     qtmaterialdivider.cpp \
+    qtmaterialdockeddatepicker.cpp \
     qtmaterialdrawer.cpp \
     qtmaterialdrawer_internal.cpp \
     qtmaterialexpansionpanel.cpp \
@@ -120,11 +122,15 @@ HEADERS = layouts/qtmaterialsnackbarlayout.h \
     qtmaterialcircularprogress.h \
     qtmaterialcircularprogress_internal.h \
     qtmaterialcircularprogress_p.h \
+    qtmaterialdatefield.h \
+    qtmaterialdatefield_p.h \
     qtmaterialdatepicker.h \
     qtmaterialdatepicker_p.h \
     qtmaterialdialog.h \
     qtmaterialdialog_internal.h \
     qtmaterialdialog_p.h \
+    qtmaterialdockeddatepicker.h \
+    qtmaterialdockeddatepicker_p.h \
     qtmaterialdrawer.h \
     qtmaterialdrawer_internal.h \
     qtmaterialdrawer_p.h \
