@@ -4,80 +4,82 @@ TEMPLATE = app
 
 CONFIG += c++11
 
-SOURCES = mainwindow.cpp \
-    main.cpp \
+SOURCES = appbarsettingseditor.cpp \
+    autocompletesettingseditor.cpp \
     avatarsettingseditor.cpp \
     badgesettingseditor.cpp \
+    carouselsettingseditor.cpp \
     checkboxsettingseditor.cpp \
-    fabsettingseditor.cpp \
-    raisedbuttonsettingseditor.cpp \
-    flatbuttonsettingseditor.cpp \
-    iconbuttonsettingseditor.cpp \
-    listsettingseditor.cpp \
-    listitemsettingseditor.cpp \
-    progresssettingseditor.cpp \
     circularprogresssettingseditor.cpp \
-    slidersettingseditor.cpp \
-    radiobuttonsettingseditor.cpp \
-    togglesettingseditor.cpp \
-    textfieldsettingseditor.cpp \
-    tabssettingseditor.cpp \
-    snackbarsettingseditor.cpp \
-    snackbarlayoutsettingseditor.cpp \
+    datetimepickersettingseditor.cpp \
     dialogsettingseditor.cpp \
     drawersettingseditor.cpp \
-    scrollbarsettingseditor.cpp \
-    appbarsettingseditor.cpp \
-    autocompletesettingseditor.cpp \
-    menusettingseditor.cpp \
-    tablesettingseditor.cpp \
-    treesettingseditor.cpp \
-    papersettingseditor.cpp \
+    fabsettingseditor.cpp \
+    flatbuttonsettingseditor.cpp \
     gridlistsettingseditor.cpp \
+    iconbuttonsettingseditor.cpp \
+    listitemsettingseditor.cpp \
+    listsettingseditor.cpp \
+    loadingprogresssettingseditor.cpp \
+    main.cpp \
+    mainwindow.cpp \
+    menusettingseditor.cpp \
+    papersettingseditor.cpp \
+    progresssettingseditor.cpp \
+    radiobuttonsettingseditor.cpp \
+    raisedbuttonsettingseditor.cpp \
+    scrollbarsettingseditor.cpp \
     searchfieldsettingseditor.cpp \
     selectfieldsettingseditor.cpp \
+    slidersettingseditor.cpp \
+    snackbarlayoutsettingseditor.cpp \
+    snackbarsettingseditor.cpp \
     steppersettingseditor.cpp \
+    tablesettingseditor.cpp \
+    tabssettingseditor.cpp \
+    textfieldsettingseditor.cpp \
+    togglesettingseditor.cpp \
     toolbarsettingseditor.cpp \
-    carouselsettingseditor.cpp \
-    loadingprogresssettingseditor.cpp
+    treesettingseditor.cpp
 
-HEADERS = mainwindow.h \
+HEADERS = appbarsettingseditor.h \
+    autocompletesettingseditor.h \
     avatarsettingseditor.h \
     badgesettingseditor.h \
+    carouselsettingseditor.h \
     checkboxsettingseditor.h \
-    fabsettingseditor.h \
-    raisedbuttonsettingseditor.h \
-    flatbuttonsettingseditor.h \
-    iconbuttonsettingseditor.h \
-    listsettingseditor.h \
-    listitemsettingseditor.h \
-    progresssettingseditor.h \
     circularprogresssettingseditor.h \
-    slidersettingseditor.h \
-    radiobuttonsettingseditor.h \
-    togglesettingseditor.h \
-    textfieldsettingseditor.h \
-    tabssettingseditor.h \
-    snackbarsettingseditor.h \
-    snackbarlayoutsettingseditor.h \
+    datetimepickersettingseditor.h \
     dialogsettingseditor.h \
     drawersettingseditor.h \
-    scrollbarsettingseditor.h \
-    appbarsettingseditor.h \
-    autocompletesettingseditor.h \
-    menusettingseditor.h \
-    tablesettingseditor.h \
-    treesettingseditor.h \
-    papersettingseditor.h \
+    fabsettingseditor.h \
+    flatbuttonsettingseditor.h \
     gridlistsettingseditor.h \
-    searchfieldsettingseditor.h \
+    iconbuttonsettingseditor.h \
+    listitemsettingseditor.h \
+    listsettingseditor.h \
+    loadingprogresssettingseditor.h \
+    mainwindow.h \
+    menusettingseditor.h \
+    papersettingseditor.h \
+    progresssettingseditor.h \
     qtmaterialselectfield.h \
     qtmaterialselectfield_p.h \
+    radiobuttonsettingseditor.h \
+    raisedbuttonsettingseditor.h \
+    scrollbarsettingseditor.h \
+    searchfieldsettingseditor.h \
     selectfieldsettingseditor.h \
+    slidersettingseditor.h \
+    snackbarlayoutsettingseditor.h \
+    snackbarsettingseditor.h \
     steppersettingseditor.h \
+    tablesettingseditor.h \
+    tabssettingseditor.h \
+    textfieldsettingseditor.h \
+    togglesettingseditor.h \
     toolbarsettingseditor.h \
-    carouselsettingseditor.h \
-    loadingprogresssettingseditor.h
+    treesettingseditor.h
 
 win32 {
     COMPONENTS_LIB = $$top_builddir/components/$(OBJECTS_DIR)/components.lib

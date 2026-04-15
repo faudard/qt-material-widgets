@@ -2,163 +2,163 @@ QT += core gui widgets
 
 TEMPLATE = lib
 CONFIG += staticlib
-SOURCES = \
-    qtmaterialdivider.cpp \
-    qtmaterialavatar.cpp \
-    lib/qtmaterialstyle.cpp \
-    lib/qtmaterialtheme.cpp \
-    qtmaterialbadge.cpp \
-    lib/qtmaterialoverlaywidget.cpp \
-    qtmaterialcheckbox.cpp \
-    lib/qtmaterialcheckable_internal.cpp \
+SOURCES = layouts/qtmaterialsnackbarlayout.cpp \
     lib/qtmaterialcheckable.cpp \
+    lib/qtmaterialcheckable_internal.cpp \
+    lib/qtmaterialoverlaywidget.cpp \
     lib/qtmaterialripple.cpp \
     lib/qtmaterialrippleoverlay.cpp \
-    qtmaterialfab.cpp \
-    qtmaterialraisedbutton.cpp \
-    qtmaterialflatbutton_internal.cpp \
-    qtmaterialflatbutton.cpp \
     lib/qtmaterialstatetransition.cpp \
-    qtmaterialiconbutton.cpp \
-    qtmaterialprogress_internal.cpp \
-    qtmaterialprogress.cpp \
-    qtmaterialcircularprogress_internal.cpp \
-    qtmaterialcircularprogress.cpp \
-    qtmaterialslider_internal.cpp \
-    qtmaterialslider.cpp \
-    qtmaterialsnackbar_internal.cpp \
-    qtmaterialsnackbar.cpp \
-    qtmaterialradiobutton.cpp \
-    qtmaterialtoggle_internal.cpp \
-    qtmaterialtoggle.cpp \
-    qtmaterialtextfield_internal.cpp \
-    qtmaterialtextfield.cpp \
-    qtmaterialtabs_internal.cpp \
-    qtmaterialtabs.cpp \
-    qtmaterialscrollbar_internal.cpp \
-    qtmaterialscrollbar.cpp \
-    qtmaterialdialog_internal.cpp \
-    qtmaterialdialog.cpp \
-    qtmaterialdrawer_internal.cpp \
-    qtmaterialdrawer.cpp \
+    lib/qtmaterialstyle.cpp \
+    lib/qtmaterialtheme.cpp \
     qtmaterialappbar.cpp \
     qtmaterialautocomplete.cpp \
-    qtmaterialpaper.cpp \
-    qtmaterialtable.cpp \
-    layouts/qtmaterialsnackbarlayout.cpp \
     qtmaterialautocomplete_internal.cpp \
-    qtmaterialmenu.cpp \
-    qtmaterialmenu_internal.cpp \
-    qtmateriallist.cpp \
-    qtmateriallistitem.cpp \
-    qtmaterialtree.cpp \
-    qtmaterialtreeitem.cpp \
+    qtmaterialavatar.cpp \
+    qtmaterialbadge.cpp \
+    qtmaterialcarousel.cpp \
+    qtmaterialcheckbox.cpp \
+    qtmaterialcircularprogress.cpp \
+    qtmaterialcircularprogress_internal.cpp \
+    qtmaterialdatepicker.cpp \
+    qtmaterialdialog.cpp \
+    qtmaterialdialog_internal.cpp \
+    qtmaterialdivider.cpp \
+    qtmaterialdrawer.cpp \
+    qtmaterialdrawer_internal.cpp \
+    qtmaterialfab.cpp \
+    qtmaterialflatbutton.cpp \
+    qtmaterialflatbutton_internal.cpp \
     qtmaterialgridlist.cpp \
     qtmaterialgridlistitem.cpp \
+    qtmaterialiconbutton.cpp \
+    qtmateriallist.cpp \
+    qtmateriallistitem.cpp \
+    qtmaterialmenu.cpp \
+    qtmaterialmenu_internal.cpp \
+    qtmaterialpaper.cpp \
+    qtmaterialprogress.cpp \
+    qtmaterialprogress_internal.cpp \
+    qtmaterialradiobutton.cpp \
+    qtmaterialraisedbutton.cpp \
+    qtmaterialscrollbar.cpp \
+    qtmaterialscrollbar_internal.cpp \
     qtmaterialsearchfield.cpp \
     qtmaterialselectfield.cpp \
+    qtmaterialslider.cpp \
+    qtmaterialslider_internal.cpp \
+    qtmaterialsnackbar.cpp \
+    qtmaterialsnackbar_internal.cpp \
     qtmaterialstepper.cpp \
+    qtmaterialtable.cpp \
+    qtmaterialtabs.cpp \
+    qtmaterialtabs_internal.cpp \
+    qtmaterialtextfield.cpp \
+    qtmaterialtextfield_internal.cpp \
+    qtmaterialtimepicker.cpp \
+    qtmaterialtoggle.cpp \
+    qtmaterialtoggle_internal.cpp \
     qtmaterialtoolbar.cpp \
-    qtmaterialcarousel.cpp \
-    qtmaterialprogress.cpp \
-    qtmaterialcircularprogress.cpp
+    qtmaterialtree.cpp \
+    qtmaterialtreeitem.cpp
 
-HEADERS = \
-    qtmaterialavatar_p.h \
-    qtmaterialavatar.h \
-    lib/qtmaterialstyle_p.h \
-    lib/qtmaterialstyle.h \
-    lib/qtmaterialtheme_p.h \
-    lib/qtmaterialtheme.h \
-    qtmaterialbadge_p.h \
-    qtmaterialbadge.h \
-    lib/qtmaterialoverlaywidget.h \
-    qtmaterialcheckbox_p.h \
-    qtmaterialcheckbox.h \
+HEADERS = layouts/qtmaterialsnackbarlayout.h \
+    layouts/qtmaterialsnackbarlayout_p.h \
+    lib/qtmaterialcheckable.h \
     lib/qtmaterialcheckable_internal.h \
     lib/qtmaterialcheckable_p.h \
+    lib/qtmaterialoverlaywidget.h \
     lib/qtmaterialripple.h \
     lib/qtmaterialrippleoverlay.h \
-    lib/qtmaterialcheckable.h \
-    qtmaterialfab_p.h \
-    qtmaterialfab.h \
-    qtmaterialraisedbutton_p.h \
-    qtmaterialraisedbutton.h \
-    qtmaterialflatbutton_internal.h \
-    qtmaterialflatbutton_p.h \
-    qtmaterialflatbutton.h \
     lib/qtmaterialstatetransition.h \
     lib/qtmaterialstatetransitionevent.h \
-    qtmaterialiconbutton_p.h \
-    qtmaterialiconbutton.h \
-    qtmaterialprogress_internal.h \
-    qtmaterialprogress_p.h \
-    qtmaterialprogress.h \
-    qtmaterialcircularprogress_internal.h \
-    qtmaterialcircularprogress_p.h \
-    qtmaterialcircularprogress.h \
-    qtmaterialslider_internal.h \
-    qtmaterialslider_p.h \
-    qtmaterialslider.h \
-    qtmaterialsnackbar_internal.h \
-    qtmaterialsnackbar_p.h \
-    qtmaterialsnackbar.h \
-    qtmaterialradiobutton_p.h \
-    qtmaterialradiobutton.h \
-    qtmaterialtoggle_internal.h \
-    qtmaterialtoggle_p.h \
-    qtmaterialtoggle.h \
-    qtmaterialtextfield_internal.h \
-    qtmaterialtextfield_p.h \
-    qtmaterialtextfield.h \
-    qtmaterialtabs_internal.h \
-    qtmaterialtabs_p.h \
-    qtmaterialtabs.h \
-    qtmaterialscrollbar_internal.h \
-    qtmaterialscrollbar_p.h \
-    qtmaterialscrollbar.h \
-    qtmaterialdialog_internal.h \
-    qtmaterialdialog_p.h \
-    qtmaterialdialog.h \
-    qtmaterialdrawer_internal.h \
-    qtmaterialdrawer_p.h \
-    qtmaterialdrawer.h \
+    lib/qtmaterialstyle.h \
+    lib/qtmaterialstyle_p.h \
+    lib/qtmaterialtheme.h \
+    lib/qtmaterialtheme_p.h \
     qtmaterialappbar.h \
     qtmaterialappbar_p.h \
     qtmaterialautocomplete.h \
-    qtmaterialautocomplete_p.h \
-    qtmaterialpaper.h \
-    qtmaterialpaper_p.h \
-    qtmaterialtable.h \
-    qtmaterialtable_p.h \
-    layouts/qtmaterialsnackbarlayout.h \
-    layouts/qtmaterialsnackbarlayout_p.h \
     qtmaterialautocomplete_internal.h \
-    qtmaterialmenu.h \
-    qtmaterialmenu_p.h \
-    qtmaterialmenu_internal.h \
-    qtmateriallist.h \
-    qtmateriallist_p.h \
-    qtmateriallistitem.h \
-    qtmateriallistitem_p.h \
-    qtmaterialtree.h \
-    qtmaterialtree_p.h \
-    qtmaterialtreeitem.h \
-    qtmaterialtreeitem_p.h \
+    qtmaterialautocomplete_p.h \
+    qtmaterialavatar.h \
+    qtmaterialavatar_p.h \
+    qtmaterialbadge.h \
+    qtmaterialbadge_p.h \
+    qtmaterialcarousel.h \
+    qtmaterialcarousel_p.h \
+    qtmaterialcheckbox.h \
+    qtmaterialcheckbox_p.h \
+    qtmaterialcircularprogress.h \
+    qtmaterialcircularprogress_internal.h \
+    qtmaterialcircularprogress_p.h \
+    qtmaterialdatepicker.h \
+    qtmaterialdatepicker_p.h \
+    qtmaterialdialog.h \
+    qtmaterialdialog_internal.h \
+    qtmaterialdialog_p.h \
+    qtmaterialdrawer.h \
+    qtmaterialdrawer_internal.h \
+    qtmaterialdrawer_p.h \
+    qtmaterialfab.h \
+    qtmaterialfab_p.h \
+    qtmaterialflatbutton.h \
+    qtmaterialflatbutton_internal.h \
+    qtmaterialflatbutton_p.h \
     qtmaterialgridlist.h \
     qtmaterialgridlist_p.h \
     qtmaterialgridlistitem.h \
     qtmaterialgridlistitem_p.h \
+    qtmaterialiconbutton.h \
+    qtmaterialiconbutton_p.h \
+    qtmateriallist.h \
+    qtmateriallist_p.h \
+    qtmateriallistitem.h \
+    qtmateriallistitem_p.h \
+    qtmaterialmenu.h \
+    qtmaterialmenu_internal.h \
+    qtmaterialmenu_p.h \
+    qtmaterialpaper.h \
+    qtmaterialpaper_p.h \
+    qtmaterialprogress.h \
+    qtmaterialprogress_internal.h \
+    qtmaterialprogress_p.h \
+    qtmaterialradiobutton.h \
+    qtmaterialradiobutton_p.h \
+    qtmaterialraisedbutton.h \
+    qtmaterialraisedbutton_p.h \
+    qtmaterialscrollbar.h \
+    qtmaterialscrollbar_internal.h \
+    qtmaterialscrollbar_p.h \
     qtmaterialsearchfield.h \
     qtmaterialsearchfield_p.h \
+    qtmaterialslider.h \
+    qtmaterialslider_internal.h \
+    qtmaterialslider_p.h \
+    qtmaterialsnackbar.h \
+    qtmaterialsnackbar_internal.h \
+    qtmaterialsnackbar_p.h \
     qtmaterialstepper.h \
     qtmaterialstepper_p.h \
+    qtmaterialtable.h \
+    qtmaterialtable_p.h \
+    qtmaterialtabs.h \
+    qtmaterialtabs_internal.h \
+    qtmaterialtabs_p.h \
+    qtmaterialtextfield.h \
+    qtmaterialtextfield_internal.h \
+    qtmaterialtextfield_p.h \
+    qtmaterialtimepicker.h \
+    qtmaterialtimepicker_p.h \
+    qtmaterialtoggle.h \
+    qtmaterialtoggle_internal.h \
+    qtmaterialtoggle_p.h \
     qtmaterialtoolbar.h \
     qtmaterialtoolbar_p.h \
-    qtmaterialcarousel.h \
-    qtmaterialcarousel_p.h \
-    qtmaterialprogress.h \
-    qtmaterialcircularprogress.h
+    qtmaterialtree.h \
+    qtmaterialtree_p.h \
+    qtmaterialtreeitem.h \
+    qtmaterialtreeitem_p.h
 
 RESOURCES += \
     resources.qrc
