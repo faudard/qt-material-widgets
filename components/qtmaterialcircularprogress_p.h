@@ -1,10 +1,9 @@
 #ifndef QTMATERIALCIRCULARPROGRESS_P_H
 #define QTMATERIALCIRCULARPROGRESS_P_H
 
-#include <QtGlobal>
-#include "lib/qtmaterialtheme.h"
+#include <QColor>
+#include "qtmaterialcircularprogress.h"
 
-class QtMaterialCircularProgress;
 class QtMaterialCircularProgressDelegate;
 
 class QtMaterialCircularProgressPrivate
@@ -18,13 +17,16 @@ public:
 
     void init();
 
-    QtMaterialCircularProgress         *const q_ptr;
+    QtMaterialCircularProgress *const q_ptr;
     QtMaterialCircularProgressDelegate *delegate;
-    Material::ProgressType              progressType;
-    QColor                              color;
-    qreal                               penWidth;
-    int                                 size;
-    bool                                useThemeColors;
+    Material::ProgressType progressType;
+    QColor color;
+    QColor backgroundColor;
+    qreal lineWidth;
+    int size;
+    bool useThemeColors;
+    bool showPercentage;
+    bool roundedCaps;
 };
 
 #endif // QTMATERIALCIRCULARPROGRESS_P_H

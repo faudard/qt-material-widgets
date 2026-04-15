@@ -1,7 +1,8 @@
 #ifndef QTMATERIALCIRCULARPROGRESS_H
 #define QTMATERIALCIRCULARPROGRESS_H
 
-#include <QtWidgets/QProgressBar>
+#include <QProgressBar>
+#include <QScopedPointer>
 #include "lib/qtmaterialtheme.h"
 
 class QtMaterialCircularProgressPrivate;
@@ -13,6 +14,9 @@ class QtMaterialCircularProgress : public QProgressBar
     Q_PROPERTY(qreal lineWidth WRITE setLineWidth READ lineWidth)
     Q_PROPERTY(qreal size WRITE setSize READ size)
     Q_PROPERTY(QColor color WRITE setColor READ color)
+    Q_PROPERTY(QColor backgroundColor WRITE setBackgroundColor READ backgroundColor)
+    Q_PROPERTY(bool showPercentage WRITE setShowPercentage READ showPercentage)
+    Q_PROPERTY(bool roundedCaps WRITE setRoundedCaps READ hasRoundedCaps)
 
 public:
     explicit QtMaterialCircularProgress(QWidget *parent = 0);
@@ -32,6 +36,15 @@ public:
 
     void setColor(const QColor &color);
     QColor color() const;
+
+    void setBackgroundColor(const QColor &color);
+    QColor backgroundColor() const;
+
+    void setShowPercentage(bool value);
+    bool showPercentage() const;
+
+    void setRoundedCaps(bool value);
+    bool hasRoundedCaps() const;
 
     QSize sizeHint() const Q_DECL_OVERRIDE;
 

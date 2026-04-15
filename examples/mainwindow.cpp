@@ -21,6 +21,7 @@
 #include "iconbuttonsettingseditor.h"
 #include "listitemsettingseditor.h"
 #include "listsettingseditor.h"
+#include "loadingprogresssettingseditor.h"
 #include "menusettingseditor.h"
 #include "papersettingseditor.h"
 #include "progresssettingseditor.h"
@@ -66,6 +67,7 @@ MainWindow::MainWindow(QWidget *parent)
     IconButtonSettingsEditor *iconButton = new IconButtonSettingsEditor;
     ListSettingsEditor *materialList = new ListSettingsEditor;
     ListItemSettingsEditor *listItem = new ListItemSettingsEditor;
+    LoadingProgressSettingsEditor *loadingProgress = new LoadingProgressSettingsEditor;
     ProgressSettingsEditor *progress = new ProgressSettingsEditor;
     CircularProgressSettingsEditor *circularProgress = new CircularProgressSettingsEditor;
     SliderSettingsEditor *slider = new SliderSettingsEditor;
@@ -106,6 +108,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(iconButton);
     stack->addWidget(materialList);
     stack->addWidget(listItem);
+    stack->addWidget(loadingProgress);
     stack->addWidget(menu);
     stack->addWidget(paper);
     stack->addWidget(progress);
@@ -141,6 +144,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Icon Button");
     list->addItem("List");
     list->addItem("List Item");
+    list->addItem(QStringLiteral("Loading + Progress"));
     list->addItem("Menu");
     list->addItem("Paper");
     list->addItem("Progress");
