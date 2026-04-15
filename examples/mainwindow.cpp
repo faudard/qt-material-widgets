@@ -9,6 +9,7 @@
 #include "autocompletesettingseditor.h"
 #include "avatarsettingseditor.h"
 #include "badgesettingseditor.h"
+#include "carouselsettingseditor.h"
 #include "checkboxsettingseditor.h"
 #include "circularprogresssettingseditor.h"
 #include "dialogsettingseditor.h"
@@ -56,6 +57,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     AvatarSettingsEditor *avatar = new AvatarSettingsEditor;
     BadgeSettingsEditor *badge = new BadgeSettingsEditor;
+    CarouselSettingsEditor *carousel = new CarouselSettingsEditor;
     CheckBoxSettingsEditor *checkbox = new CheckBoxSettingsEditor;
     FloatingActionButtonSettingsEditor *fab = new FloatingActionButtonSettingsEditor;
     RaisedButtonSettingsEditor *raisedButton = new RaisedButtonSettingsEditor;
@@ -92,6 +94,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(autocomplete);
     stack->addWidget(avatar);
     stack->addWidget(badge);
+    stack->addWidget(carousel);
     stack->addWidget(checkbox);
     stack->addWidget(circularProgress);
     stack->addWidget(dialog);
@@ -126,6 +129,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Auto Complete");
     list->addItem("Avatar");
     list->addItem("Badge");
+    list->addItem("Carousel");
     list->addItem("Checkbox");
     list->addItem("Circular Progress");
     list->addItem("Dialog");
