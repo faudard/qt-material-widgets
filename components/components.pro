@@ -47,6 +47,7 @@ SOURCES = layouts/qtmaterialsnackbarlayout.cpp \
     qtmaterialprogress_internal.cpp \
     qtmaterialradiobutton.cpp \
     qtmaterialraisedbutton.cpp \
+    qtmaterialrangeslider.cpp \
     qtmaterialscrollbar.cpp \
     qtmaterialscrollbar_internal.cpp \
     qtmaterialsearchfield.cpp \
@@ -149,6 +150,8 @@ HEADERS = layouts/qtmaterialsnackbarlayout.h \
     qtmaterialradiobutton_p.h \
     qtmaterialraisedbutton.h \
     qtmaterialraisedbutton_p.h \
+    qtmaterialrangeslider.h \
+    qtmaterialrangeslider_p.h \
     qtmaterialscrollbar.h \
     qtmaterialscrollbar_internal.h \
     qtmaterialscrollbar_p.h \

@@ -34,6 +34,7 @@
 #include "progresssettingseditor.h"
 #include "radiobuttonsettingseditor.h"
 #include "raisedbuttonsettingseditor.h"
+#include "rangeslidersettingseditor.h"
 #include "scrollbarsettingseditor.h"
 #include "searchfieldsettingseditor.h"
 #include "segmentedbuttonsettingseditor.h"
@@ -52,6 +53,7 @@
 #include "toolbarsettingseditor.h"
 #include "tooltipsettingseditor.h"
 #include "treesettingseditor.h"
+#include "daterangepickersettingseditor.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -82,7 +84,7 @@ MainWindow::MainWindow(QWidget *parent)
     DialogSettingsEditor *dialog = new DialogSettingsEditor;
     DividerSettingsEditor *divider = new DividerSettingsEditor;
     DrawerSettingsEditor *drawer = new DrawerSettingsEditor;
-    ExpansionPanelSettingsEditor *expansionPanel = new ExpansionPanelSettingsEditor(this);
+    ExpansionPanelSettingsEditor *expansionPanel = new ExpansionPanelSettingsEditor;
     FlatButtonSettingsEditor *flatButton = new FlatButtonSettingsEditor;
     FloatingActionButtonSettingsEditor *fab = new FloatingActionButtonSettingsEditor;
     GridListSettingsEditor *gridList = new GridListSettingsEditor;
@@ -97,11 +99,13 @@ MainWindow::MainWindow(QWidget *parent)
     ProgressSettingsEditor *progress = new ProgressSettingsEditor;
     RadioButtonSettingsEditor *radioButton = new RadioButtonSettingsEditor;
     RaisedButtonSettingsEditor *raisedButton = new RaisedButtonSettingsEditor;
+    RangeSliderSettingsEditor *rangeSlider = new RangeSliderSettingsEditor;
+    DateRangePickerSettingsEditor *dateRangePicker = new DateRangePickerSettingsEditor;
     ScrollBarSettingsEditor *scrollBar = new ScrollBarSettingsEditor;
     SearchFieldSettingsEditor *searchField = new SearchFieldSettingsEditor;
     SegmentedButtonSettingsEditor *segmentedButton = new SegmentedButtonSettingsEditor;
     SelectFieldSettingsEditor *selectField = new SelectFieldSettingsEditor;
-    SideSheetSettingsEditor *sideSheet = new SideSheetSettingsEditor(this);
+    SideSheetSettingsEditor *sideSheet = new SideSheetSettingsEditor;
     SliderSettingsEditor *slider = new SliderSettingsEditor;
     SnackbarSettingsEditor *snackbar = new SnackbarSettingsEditor;
     SnackbarLayoutSettingsEditor *snackbarLayout = new SnackbarLayoutSettingsEditor;
@@ -145,6 +149,8 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(progress);
     stack->addWidget(radioButton);
     stack->addWidget(raisedButton);
+    stack->addWidget(rangeSlider);
+    stack->addWidget(dateRangePicker);
     stack->addWidget(scrollBar);
     stack->addWidget(searchField);
     stack->addWidget(segmentedButton);
@@ -192,7 +198,9 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Paper");
     list->addItem("Progress");
     list->addItem("Radio Button");
+    list->addItem("Date Range Picker");
     list->addItem("Raised Button");
+    list->addItem("Range Slider");
     list->addItem("ScrollBar");
     list->addItem("Search Field");
     list->addItem("Segmented Button");

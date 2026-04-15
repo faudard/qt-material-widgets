@@ -34,6 +34,7 @@ SOURCES = appbarsettingseditor.cpp \
     progresssettingseditor.cpp \
     radiobuttonsettingseditor.cpp \
     raisedbuttonsettingseditor.cpp \
+    rangeslidersettingseditor.cpp \
     scrollbarsettingseditor.cpp \
     searchfieldsettingseditor.cpp \
     segmentedbuttonsettingseditor.cpp \
@@ -83,6 +84,7 @@ HEADERS = appbarsettingseditor.h \
     qtmaterialselectfield_p.h \
     radiobuttonsettingseditor.h \
     raisedbuttonsettingseditor.h \
+    rangeslidersettingseditor.h \
     scrollbarsettingseditor.h \
     searchfieldsettingseditor.h \
     segmentedbuttonsettingseditor.h \
