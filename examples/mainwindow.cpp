@@ -38,6 +38,7 @@
 #include "rangeslidersettingseditor.h"
 #include "richtooltipsettingseditor.h"
 #include "scrollbarsettingseditor.h"
+#include "searchbarsettingseditor.h"
 #include "searchfieldsettingseditor.h"
 #include "segmentedbuttonsettingseditor.h"
 #include "selectfieldsettingseditor.h"
@@ -105,6 +106,7 @@ MainWindow::MainWindow(QWidget *parent)
     DateRangePickerSettingsEditor *dateRangePicker = new DateRangePickerSettingsEditor;
     RichTooltipSettingsEditor *richTooltip = new RichTooltipSettingsEditor;
     ScrollBarSettingsEditor *scrollBar = new ScrollBarSettingsEditor;
+    SearchBarSettingsEditor *searchBarEditor = new SearchBarSettingsEditor;
     SearchFieldSettingsEditor *searchField = new SearchFieldSettingsEditor;
     SegmentedButtonSettingsEditor *segmentedButton = new SegmentedButtonSettingsEditor;
     SelectFieldSettingsEditor *selectField = new SelectFieldSettingsEditor;
@@ -157,6 +159,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(dateRangePicker);
     stack->addWidget(richTooltip);
     stack->addWidget(scrollBar);
+    stack->addWidget(searchBarEditor);
     stack->addWidget(searchField);
     stack->addWidget(segmentedButton);
     stack->addWidget(selectField);
@@ -209,6 +212,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Range Slider");
     list->addItem(QStringLiteral("Rich Tooltip"));
     list->addItem("ScrollBar");
+    list->addItem("Search Bar");
     list->addItem("Search Field");
     list->addItem("Segmented Button");
     list->addItem("Select Field");
