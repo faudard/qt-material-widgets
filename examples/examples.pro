@@ -25,6 +25,7 @@ SOURCES = appbarsettingseditor.cpp \
     main.cpp \
     mainwindow.cpp \
     menusettingseditor.cpp \
+    navigationrailsettingseditor.cpp \
     navigationsettingseditor.cpp \
     papersettingseditor.cpp \
     progresssettingseditor.cpp \
@@ -65,6 +66,7 @@ HEADERS = appbarsettingseditor.h \
     loadingprogresssettingseditor.h \
     mainwindow.h \
     menusettingseditor.h \
+    navigationrailsettingseditor.h \
     navigationsettingseditor.h \
     papersettingseditor.h \
     progresssettingseditor.h \

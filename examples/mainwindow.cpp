@@ -5,7 +5,6 @@
 #include <QStackedLayout>
 #include <QWidget>
 
-
 #include "appbarsettingseditor.h"
 #include "autocompletesettingseditor.h"
 #include "avatarsettingseditor.h"
@@ -26,6 +25,7 @@
 #include "listsettingseditor.h"
 #include "loadingprogresssettingseditor.h"
 #include "menusettingseditor.h"
+#include "navigationrailsettingseditor.h"
 #include "navigationsettingseditor.h"
 #include "papersettingseditor.h"
 #include "progresssettingseditor.h"
@@ -66,7 +66,7 @@ MainWindow::MainWindow(QWidget *parent)
     AutoCompleteSettingsEditor *autocomplete = new AutoCompleteSettingsEditor;
     AvatarSettingsEditor *avatar = new AvatarSettingsEditor;
     BadgeSettingsEditor *badge = new BadgeSettingsEditor;
-    BottomSheetSettingsEditor*bottomsheet= new BottomSheetSettingsEditor;
+    BottomSheetSettingsEditor *bottomsheet = new BottomSheetSettingsEditor;
     CarouselSettingsEditor *carousel = new CarouselSettingsEditor;
     CheckBoxSettingsEditor *checkbox = new CheckBoxSettingsEditor;
     CircularProgressSettingsEditor *circularProgress = new CircularProgressSettingsEditor;
@@ -83,6 +83,7 @@ MainWindow::MainWindow(QWidget *parent)
     LoadingProgressSettingsEditor *loadingProgress = new LoadingProgressSettingsEditor;
     MenuSettingsEditor *menu = new MenuSettingsEditor;
     NavigationSettingsEditor *navigation = new NavigationSettingsEditor;
+    NavigationRailSettingsEditor *navigationRail = new NavigationRailSettingsEditor;
     PaperSettingsEditor *paper = new PaperSettingsEditor;
     ProgressSettingsEditor *progress = new ProgressSettingsEditor;
     RadioButtonSettingsEditor *radioButton = new RadioButtonSettingsEditor;
@@ -124,6 +125,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(loadingProgress);
     stack->addWidget(menu);
     stack->addWidget(navigation);
+    stack->addWidget(navigationRail);
     stack->addWidget(paper);
     stack->addWidget(progress);
     stack->addWidget(radioButton);
@@ -165,6 +167,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Loading + Progress");
     list->addItem("Menu");
     list->addItem("Navigation Bar");
+    list->addItem("Navigation Rail");
     list->addItem("Paper");
     list->addItem("Progress");
     list->addItem("Radio Button");
