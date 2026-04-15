@@ -53,6 +53,7 @@ SOURCES = appbarsettingseditor.cpp \
     tablesettingseditor.cpp \
     tabssettingseditor.cpp \
     textfieldsettingseditor.cpp \
+    toggleiconbuttonsettingseditor.cpp \
     togglesettingseditor.cpp \
     toolbarsettingseditor.cpp \
     tooltipsettingseditor.cpp \
@@ -108,6 +109,7 @@ HEADERS = appbarsettingseditor.h \
     tablesettingseditor.h \
     tabssettingseditor.h \
     textfieldsettingseditor.h \
+    toggleiconbuttonsettingseditor.h \
     togglesettingseditor.h \
     toolbarsettingseditor.h \
     tooltipsettingseditor.h \

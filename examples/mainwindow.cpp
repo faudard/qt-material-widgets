@@ -57,6 +57,7 @@
 #include "tablesettingseditor.h"
 #include "tabssettingseditor.h"
 #include "textfieldsettingseditor.h"
+#include "toggleiconbuttonsettingseditor.h"
 #include "togglesettingseditor.h"
 #include "toolbarsettingseditor.h"
 #include "tooltipsettingseditor.h"
@@ -130,6 +131,7 @@ MainWindow::MainWindow(QWidget *parent)
     TabsSettingsEditor *tabs = new TabsSettingsEditor;
     TextFieldSettingsEditor *textField = new TextFieldSettingsEditor;
     ToggleSettingsEditor *toggle = new ToggleSettingsEditor;
+    ToggleIconButtonSettingsEditor *toggleIconButton = new ToggleIconButtonSettingsEditor;
     ToolbarSettingsEditor *toolbar = new ToolbarSettingsEditor;
     TooltipSettingsEditor *tooltip = new TooltipSettingsEditor;
     TreeSettingsEditor *tree = new TreeSettingsEditor;
@@ -187,6 +189,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(tabs);
     stack->addWidget(textField);
     stack->addWidget(toggle);
+    stack->addWidget(toggleIconButton);
     stack->addWidget(toolbar);
     stack->addWidget(tooltip);
     stack->addWidget(tree);
@@ -244,6 +247,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Tabs");
     list->addItem("Text Field");
     list->addItem("Toggle");
+    list->addItem("Toggle Icon Button");
     list->addItem("Toolbar");
     list->addItem("Tooltips");
     list->addItem("Tree");

@@ -73,6 +73,7 @@ SOURCES = layouts/qtmaterialsnackbarlayout.cpp \
     qtmaterialtimepicker.cpp \
     qtmaterialtoggle.cpp \
     qtmaterialtoggle_internal.cpp \
+    qtmaterialtoggleiconbutton.cpp \
     qtmaterialtoolbar.cpp \
     qtmaterialtooltip.cpp \
     qtmaterialtree.cpp \
@@ -199,6 +200,8 @@ HEADERS = layouts/qtmaterialsnackbarlayout.h \
     qtmaterialtoggle.h \
     qtmaterialtoggle_internal.h \
     qtmaterialtoggle_p.h \
+    qtmaterialtoggleiconbutton.h \
+    qtmaterialtoggleiconbutton_p.h \
     qtmaterialtoolbar.h \
     qtmaterialtoolbar_p.h \
     qtmaterialtooltip.h \
