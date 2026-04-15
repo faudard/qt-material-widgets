@@ -55,7 +55,10 @@ SOURCES = \
     qtmaterialtreeitem.cpp \
     qtmaterialgridlist.cpp \
     qtmaterialgridlistitem.cpp \
-    qtmaterialsearchfield.cpp
+    qtmaterialsearchfield.cpp \
+    qtmaterialselectfield.cpp \
+    qtmaterialstepper.cpp
+
 HEADERS = \
     qtmaterialavatar_p.h \
     qtmaterialavatar.h \
@@ -143,6 +146,8 @@ HEADERS = \
     qtmaterialgridlistitem.h \
     qtmaterialgridlistitem_p.h \
     qtmaterialsearchfield.h \
-    qtmaterialsearchfield_p.h
+    qtmaterialsearchfield_p.h \
+    qtmaterialstepper.h \
+    qtmaterialstepper_p.h
 RESOURCES += \
     resources.qrc

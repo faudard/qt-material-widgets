@@ -31,6 +31,7 @@
 #include "selectfieldsettingseditor.h"
 #include "snackbarlayoutsettingseditor.h"
 #include "snackbarsettingseditor.h"
+#include "steppersettingseditor.h"
 #include "tablesettingseditor.h"
 #include "tabssettingseditor.h"
 #include "textfieldsettingseditor.h"
@@ -73,6 +74,7 @@ MainWindow::MainWindow(QWidget *parent)
     SelectFieldSettingsEditor *selectField = new SelectFieldSettingsEditor;
     SnackbarSettingsEditor *snackbar = new SnackbarSettingsEditor;
     SnackbarLayoutSettingsEditor *snackbarLayout = new SnackbarLayoutSettingsEditor;
+    StepperSettingsEditor *stepper = new StepperSettingsEditor;
     DialogSettingsEditor *dialog = new DialogSettingsEditor;
     DividerSettingsEditor *divider = new DividerSettingsEditor;
     DrawerSettingsEditor *drawer = new DrawerSettingsEditor;
@@ -110,6 +112,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(snackbarLayout);
     stack->addWidget(searchField);
     stack->addWidget(selectField);
+    stack->addWidget(stepper);
     stack->addWidget(table);
     stack->addWidget(tabs);
     stack->addWidget(textField);
@@ -142,6 +145,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Snackbar Layout");
     list->addItem("Search Field");
     list->addItem("Select Field");
+    list->addItem("Stepper");
     list->addItem("Table");
     list->addItem("Tabs");
     list->addItem("Text Field");
