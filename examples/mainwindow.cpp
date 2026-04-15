@@ -20,6 +20,7 @@
 #include "listitemsettingseditor.h"
 #include "listsettingseditor.h"
 #include "menusettingseditor.h"
+#include "papersettingseditor.h"
 #include "progresssettingseditor.h"
 #include "radiobuttonsettingseditor.h"
 #include "raisedbuttonsettingseditor.h"
@@ -70,6 +71,7 @@ MainWindow::MainWindow(QWidget *parent)
     ScrollBarSettingsEditor *scrollBar = new ScrollBarSettingsEditor;
     AppBarSettingsEditor *appBar = new AppBarSettingsEditor;
     AutoCompleteSettingsEditor *autocomplete = new AutoCompleteSettingsEditor;
+    PaperSettingsEditor *paper = new PaperSettingsEditor;
     MenuSettingsEditor *menu = new MenuSettingsEditor;
     TableSettingsEditor *table = new TableSettingsEditor;
     TreeSettingsEditor *tree = new TreeSettingsEditor;
@@ -89,6 +91,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(materialList);
     stack->addWidget(listItem);
     stack->addWidget(menu);
+    stack->addWidget(paper);
     stack->addWidget(progress);
     stack->addWidget(radioButton);
     stack->addWidget(raisedButton);
@@ -116,6 +119,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("List");
     list->addItem("List Item");
     list->addItem("Menu");
+    list->addItem("Paper");
     list->addItem("Progress");
     list->addItem("Radio Button");
     list->addItem("Raised Button");
