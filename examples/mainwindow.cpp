@@ -21,6 +21,7 @@
 #include "dividersettingseditor.h"
 #include "drawersettingseditor.h"
 #include "expansionPanelSettingsEditor.h"
+#include "fabmenusettingseditor.h"
 #include "fabsettingseditor.h"
 #include "flatbuttonsettingseditor.h"
 #include "gridlistsettingseditor.h"
@@ -90,6 +91,7 @@ MainWindow::MainWindow(QWidget *parent)
     DividerSettingsEditor *divider = new DividerSettingsEditor;
     DrawerSettingsEditor *drawer = new DrawerSettingsEditor;
     ExpansionPanelSettingsEditor *expansionPanel = new ExpansionPanelSettingsEditor;
+    FabMenuSettingsEditor *fabMenu = new FabMenuSettingsEditor;
     FlatButtonSettingsEditor *flatButton = new FlatButtonSettingsEditor;
     FloatingActionButtonSettingsEditor *fab = new FloatingActionButtonSettingsEditor;
     GridListSettingsEditor *gridList = new GridListSettingsEditor;
@@ -144,6 +146,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(divider);
     stack->addWidget(drawer);
     stack->addWidget(expansionPanel);
+    stack->addWidget(fabMenu);
     stack->addWidget(flatButton);
     stack->addWidget(fab);
     stack->addWidget(gridList);
@@ -198,6 +201,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Divider");
     list->addItem("Drawer");
     list->addItem("Expansion Panel");
+    list->addItem("FAB Menu");
     list->addItem("Flat Button");
     list->addItem("Floating Action Button");
     list->addItem("Grid List");

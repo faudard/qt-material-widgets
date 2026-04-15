@@ -31,6 +31,7 @@ SOURCES = layouts/qtmaterialsnackbarlayout.cpp \
     qtmaterialdrawer_internal.cpp \
     qtmaterialexpansionpanel.cpp \
     qtmaterialfab.cpp \
+    qtmaterialfabmenu.cpp \
     qtmaterialflatbutton.cpp \
     qtmaterialflatbutton_internal.cpp \
     qtmaterialgridlist.cpp \
@@ -124,6 +125,8 @@ HEADERS = layouts/qtmaterialsnackbarlayout.h \
     qtmaterialexpansionpanel_p.h \
     qtmaterialfab.h \
     qtmaterialfab_p.h \
+    qtmaterialfabmenu.h \
+    qtmaterialfabmenu_p.h \
     qtmaterialflatbutton.h \
     qtmaterialflatbutton_internal.h \
     qtmaterialflatbutton_p.h \

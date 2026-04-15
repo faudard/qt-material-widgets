@@ -18,6 +18,7 @@ SOURCES = appbarsettingseditor.cpp \
     dialogsettingseditor.cpp \
     drawersettingseditor.cpp \
     expansionpanelsettingseditor.cpp \
+    fabmenusettingseditor.cpp \
     fabsettingseditor.cpp \
     flatbuttonsettingseditor.cpp \
     gridlistsettingseditor.cpp \
@@ -70,6 +71,7 @@ HEADERS = appbarsettingseditor.h \
     dialogsettingseditor.h \
     drawersettingseditor.h \
     expansionpanelsettingseditor.h \
+    fabmenusettingseditor.h \
     fabsettingseditor.h \
     flatbuttonsettingseditor.h \
     gridlistsettingseditor.h \
