@@ -41,6 +41,7 @@ SOURCES = appbarsettingseditor.cpp \
     segmentedbuttonsettingseditor.cpp \
     selectfieldsettingseditor.cpp \
     sidesheetsettingseditor.cpp \
+    skeletonsettingseditor.cpp \
     slidersettingseditor.cpp \
     snackbarlayoutsettingseditor.cpp \
     snackbarsettingseditor.cpp \
@@ -92,6 +93,7 @@ HEADERS = appbarsettingseditor.h \
     segmentedbuttonsettingseditor.h \
     selectfieldsettingseditor.h \
     sidesheetsettingseditor.h \
+    skeletonsettingseditor.h \
     slidersettingseditor.h \
     snackbarlayoutsettingseditor.h \
     snackbarsettingseditor.h \

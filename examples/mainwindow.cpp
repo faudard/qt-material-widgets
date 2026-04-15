@@ -42,6 +42,7 @@
 #include "segmentedbuttonsettingseditor.h"
 #include "selectfieldsettingseditor.h"
 #include "sidesheetsettingseditor.h"
+#include "skeletonsettingseditor.h"
 #include "slidersettingseditor.h"
 #include "snackbarlayoutsettingseditor.h"
 #include "snackbarsettingseditor.h"
@@ -108,6 +109,7 @@ MainWindow::MainWindow(QWidget *parent)
     SegmentedButtonSettingsEditor *segmentedButton = new SegmentedButtonSettingsEditor;
     SelectFieldSettingsEditor *selectField = new SelectFieldSettingsEditor;
     SideSheetSettingsEditor *sideSheet = new SideSheetSettingsEditor;
+    SkeletonSettingsEditor *skeleton = new SkeletonSettingsEditor;
     SliderSettingsEditor *slider = new SliderSettingsEditor;
     SnackbarSettingsEditor *snackbar = new SnackbarSettingsEditor;
     SnackbarLayoutSettingsEditor *snackbarLayout = new SnackbarLayoutSettingsEditor;
@@ -159,6 +161,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(segmentedButton);
     stack->addWidget(selectField);
     stack->addWidget(sideSheet);
+    stack->addWidget(skeleton);
     stack->addWidget(slider);
     stack->addWidget(snackbar);
     stack->addWidget(snackbarLayout);
@@ -210,6 +213,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Segmented Button");
     list->addItem("Select Field");
     list->addItem("Side Sheet");
+    list->addItem("Skeleton");
     list->addItem("Slider");
     list->addItem("Snackbar");
     list->addItem("Snackbar Layout");
