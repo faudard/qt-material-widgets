@@ -4,7 +4,8 @@ TEMPLATE = app
 
 CONFIG += c++11
 
-SOURCES = appbarsettingseditor.cpp \
+SOURCES = $$PWD/toolbarvariantssettingseditor.cpp \
+    appbarsettingseditor.cpp \
     autocompletesettingseditor.cpp \
     avatarsettingseditor.cpp \
     badgesettingseditor.cpp \
@@ -43,6 +44,7 @@ SOURCES = appbarsettingseditor.cpp \
     richtooltipsettingseditor.cpp \
     scrollbarsettingseditor.cpp \
     searchfieldsettingseditor.cpp \
+    searchviewsettingseditor.cpp \
     segmentedbuttonsettingseditor.cpp \
     selectfieldsettingseditor.cpp \
     sidesheetsettingseditor.cpp \
@@ -62,7 +64,8 @@ SOURCES = appbarsettingseditor.cpp \
     tooltipsettingseditor.cpp \
     treesettingseditor.cpp
 
-HEADERS = appbarsettingseditor.h \
+HEADERS = $$PWD/toolbarvariantssettingseditor.h \
+    appbarsettingseditor.h \
     autocompletesettingseditor.h \
     avatarsettingseditor.h \
     badgesettingseditor.h \
@@ -102,6 +105,7 @@ HEADERS = appbarsettingseditor.h \
     richtooltipsettingseditor.h \
     scrollbarsettingseditor.h \
     searchfieldsettingseditor.h \
+    searchviewsettingseditor.h \
     segmentedbuttonsettingseditor.h \
     selectfieldsettingseditor.h \
     sidesheetsettingseditor.h \

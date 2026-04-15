@@ -2,7 +2,9 @@ QT += core gui widgets
 
 TEMPLATE = lib
 CONFIG += staticlib
-SOURCES = layouts/qtmaterialsnackbarlayout.cpp \
+SOURCES = $$PWD/qtmaterialdockedtoolbar.cpp \
+    $$PWD/qtmaterialfloatingtoolbar.cpp \
+    layouts/qtmaterialsnackbarlayout.cpp \
     lib/qtmaterialcheckable.cpp \
     lib/qtmaterialcheckable_internal.cpp \
     lib/qtmaterialoverlaywidget.cpp \
@@ -59,6 +61,7 @@ SOURCES = layouts/qtmaterialsnackbarlayout.cpp \
     qtmaterialscrollbar.cpp \
     qtmaterialscrollbar_internal.cpp \
     qtmaterialsearchfield.cpp \
+    qtmaterialsearchview.cpp \
     qtmaterialsegmentedbutton.cpp \
     qtmaterialselectfield.cpp \
     qtmaterialsidesheet.cpp \
@@ -84,7 +87,11 @@ SOURCES = layouts/qtmaterialsnackbarlayout.cpp \
     qtmaterialtree.cpp \
     qtmaterialtreeitem.cpp
 
-HEADERS = layouts/qtmaterialsnackbarlayout.h \
+HEADERS = $$PWD/qtmaterialdockedtoolbar.h \
+    $$PWD/qtmaterialdockedtoolbar_p.h \
+    $$PWD/qtmaterialfloatingtoolbar.h \
+    $$PWD/qtmaterialfloatingtoolbar_p.h \
+    layouts/qtmaterialsnackbarlayout.h \
     layouts/qtmaterialsnackbarlayout_p.h \
     lib/qtmaterialcheckable.h \
     lib/qtmaterialcheckable_internal.h \
@@ -184,6 +191,8 @@ HEADERS = layouts/qtmaterialsnackbarlayout.h \
     qtmaterialscrollbar_p.h \
     qtmaterialsearchfield.h \
     qtmaterialsearchfield_p.h \
+    qtmaterialsearchview.h \
+    qtmaterialsearchview_p.h \
     qtmaterialsegmentedbutton.h \
     qtmaterialsegmentedbutton_p.h \
     qtmaterialsidesheet.h \

@@ -46,6 +46,7 @@
 #include "scrollbarsettingseditor.h"
 #include "searchbarsettingseditor.h"
 #include "searchfieldsettingseditor.h"
+#include "searchviewsettingseditor.h"
 #include "segmentedbuttonsettingseditor.h"
 #include "selectfieldsettingseditor.h"
 #include "sidesheetsettingseditor.h"
@@ -63,6 +64,7 @@
 #include "toggleiconbuttonsettingseditor.h"
 #include "togglesettingseditor.h"
 #include "toolbarsettingseditor.h"
+#include "toolbarvariantssettingseditor.h"
 #include "tooltipsettingseditor.h"
 #include "treesettingseditor.h"
 
@@ -122,6 +124,7 @@ MainWindow::MainWindow(QWidget *parent)
     ScrollBarSettingsEditor *scrollBar = new ScrollBarSettingsEditor;
     SearchBarSettingsEditor *searchBarEditor = new SearchBarSettingsEditor;
     SearchFieldSettingsEditor *searchField = new SearchFieldSettingsEditor;
+    SearchViewSettingsEditor *searchView = new SearchViewSettingsEditor(this);
     SegmentedButtonSettingsEditor *segmentedButton = new SegmentedButtonSettingsEditor;
     SelectFieldSettingsEditor *selectField = new SelectFieldSettingsEditor;
     SideSheetSettingsEditor *sideSheet = new SideSheetSettingsEditor;
@@ -139,6 +142,7 @@ MainWindow::MainWindow(QWidget *parent)
     ToggleSettingsEditor *toggle = new ToggleSettingsEditor;
     ToggleIconButtonSettingsEditor *toggleIconButton = new ToggleIconButtonSettingsEditor;
     ToolbarSettingsEditor *toolbar = new ToolbarSettingsEditor;
+    ToolbarVariantsSettingsEditor *toolbarVariants = new ToolbarVariantsSettingsEditor;
     TooltipSettingsEditor *tooltip = new TooltipSettingsEditor;
     TreeSettingsEditor *tree = new TreeSettingsEditor;
 
@@ -183,6 +187,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(scrollBar);
     stack->addWidget(searchBarEditor);
     stack->addWidget(searchField);
+    stack->addWidget(searchView);
     stack->addWidget(segmentedButton);
     stack->addWidget(selectField);
     stack->addWidget(sideSheet);
@@ -200,6 +205,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(toggle);
     stack->addWidget(toggleIconButton);
     stack->addWidget(toolbar);
+    stack->addWidget(toolbarVariants);
     stack->addWidget(tooltip);
     stack->addWidget(tree);
 
@@ -244,6 +250,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("ScrollBar");
     list->addItem("Search Bar");
     list->addItem("Search Field");
+    list->addItem("Search View");
     list->addItem("Segmented Button");
     list->addItem("Select Field");
     list->addItem("Side Sheet");
@@ -261,6 +268,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Toggle");
     list->addItem("Toggle Icon Button");
     list->addItem("Toolbar");
+    list->addItem("Toolbar variants");
     list->addItem("Tooltips");
     list->addItem("Tree");
 

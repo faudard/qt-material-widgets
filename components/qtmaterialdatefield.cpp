@@ -21,7 +21,8 @@ QtMaterialDateField::QtMaterialDateField(QWidget *parent)
     d->picker = new QtMaterialDockedDatePicker(this);
     setReadOnly(true);
     setDate(d->date);
-    connect(d->picker, SIGNAL(dateSelected(QDate)), this, SLOT(setDate(QDate)));
+    connect(d->picker, &QtMaterialDockedDatePicker::dateSelected,
+        this, &QtMaterialDateField::setDate);
 }
 
 QtMaterialDateField::~QtMaterialDateField()

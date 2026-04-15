@@ -19,7 +19,7 @@ BannerSettingsEditor::BannerSettingsEditor(QWidget *parent)
     m_banner->setSupportingText(QStringLiteral("Upgrade now to keep access to syncing and backup features."));
     m_banner->setPrimaryActionText(QStringLiteral("UPGRADE"));
     m_banner->setSecondaryActionText(QStringLiteral("LATER"));
-    m_banner->setLeadingIcon(QIcon(":/svg/navigation/ic_menu_24px.svg"));
+    m_banner->setLeadingIcon(QIcon(":/icons/icons/navigation/svg/production/ic_menu_24px.svg"));
     m_banner->setShowLeadingIcon(true);
 
     QFrame *canvas = new QFrame;
