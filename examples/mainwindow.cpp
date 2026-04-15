@@ -76,6 +76,7 @@ MainWindow::MainWindow(QWidget *parent)
     ListSettingsEditor *materialList = new ListSettingsEditor;
     ListItemSettingsEditor *listItem = new ListItemSettingsEditor;
     LoadingProgressSettingsEditor *loadingProgress = new LoadingProgressSettingsEditor;
+    NavigationSettingsEditor *navigation = new NavigationSettingsEditor;
     MenuSettingsEditor *menu = new MenuSettingsEditor;
     PaperSettingsEditor *paper = new PaperSettingsEditor;
     ProgressSettingsEditor *progress = new ProgressSettingsEditor;
@@ -113,6 +114,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(materialList);
     stack->addWidget(listItem);
     stack->addWidget(loadingProgress);
+    stack->addWidget(navigation);
     stack->addWidget(menu);
     stack->addWidget(paper);
     stack->addWidget(progress);
@@ -150,6 +152,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("List");
     list->addItem("List Item");
     list->addItem("Loading + Progress");
+    list->addItem("Navigation Bar");
     list->addItem("Menu");
     list->addItem("Paper");
     list->addItem("Progress");
@@ -168,6 +171,8 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Toggle");
     list->addItem("Toolbar");
     list->addItem("Tree");
+
+
 
     list->setCurrentRow(0);
 
