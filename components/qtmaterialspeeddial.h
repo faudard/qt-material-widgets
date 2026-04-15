@@ -74,10 +74,12 @@ protected:
     void resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
     void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
 
-private:
+  private:
     Q_DISABLE_COPY(QtMaterialSpeedDial)
     Q_DECLARE_PRIVATE(QtMaterialSpeedDial)
     QtMaterialSpeedDialPrivate *const d_ptr;
+
+    void layoutButtons();
 };
 
 #endif // QTMATERIALSPEEDDIAL_H

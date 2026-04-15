@@ -277,38 +277,37 @@ bool QtMaterialFloatingActionButton::eventFilter(QObject *obj, QEvent *event)
  */
 void QtMaterialFloatingActionButton::paintEvent(QPaintEvent *event)
 {
-    Q_UNUSED(event)
+  Q_UNUSED(event)
+  Q_D(QtMaterialFloatingActionButton);
 
-    Q_D(QtMaterialFloatingActionButton);
+  QRect square(0, 0, d->diameter(), d->diameter());
+  square.moveCenter(rect().center());
 
-    QRect square = QRect(0, 0, d->diameter(), d->diameter());
-    square.moveCenter(rect().center());
+  QPainter painter(this);
+  painter.setRenderHints(QPainter::Antialiasing);
 
-    QPainter painter(this);
-    painter.setRenderHints(QPainter::Antialiasing);
+  QBrush brush;
+  brush.setStyle(Qt::SolidPattern);
+  brush.setColor(isEnabled() ? backgroundColor() : disabledBackgroundColor());
 
-    QBrush brush;
-    brush.setStyle(Qt::SolidPattern);
+  painter.setBrush(brush);
+  painter.setPen(Qt::NoPen);
+  painter.drawEllipse(square);
 
-    if (isEnabled()) {
-        brush.setColor(backgroundColor());
-    } else {
-        brush.setColor(disabledBackgroundColor());
+  QRect iconGeometry(0, 0, d->iconSize(), d->iconSize());
+  iconGeometry.moveCenter(square.center());
+
+  QPixmap pixmap = icon().pixmap(QSize(d->iconSize(), d->iconSize()));
+  if (!pixmap.isNull()) {
+    QPainter iconPainter(&pixmap);
+    if (iconPainter.isActive()) {
+      iconPainter.setCompositionMode(QPainter::CompositionMode_SourceIn);
+      iconPainter.fillRect(pixmap.rect(),
+                           isEnabled() ? foregroundColor() : disabledForegroundColor());
+      iconPainter.end();
     }
-
-    painter.setBrush(brush);
-    painter.setPen(Qt::NoPen);
-    painter.drawEllipse(square);
-
-    QRect iconGeometry(0, 0, d->iconSize(), d->iconSize());
-    iconGeometry.moveCenter(square.center());
-
-    QPixmap pixmap = icon().pixmap(QSize(d->iconSize(), d->iconSize()));
-    QPainter icon(&pixmap);
-    icon.setCompositionMode(QPainter::CompositionMode_SourceIn);
-    icon.fillRect(pixmap.rect(), isEnabled() ? foregroundColor()
-                                             : disabledForegroundColor());
     painter.drawPixmap(iconGeometry, pixmap);
+  }
 }
 
 void QtMaterialFloatingActionButton::updateClipPath()

@@ -9,6 +9,7 @@
 #include <QResizeEvent>
 #include <QToolButton>
 #include <QTimer>
+#include <qstyle.h>
 
 #include "qtmaterialsearchfield.h"
 
@@ -35,67 +36,78 @@ QtMaterialSearchBarPrivate::~QtMaterialSearchBarPrivate()
 
 void QtMaterialSearchBarPrivate::init()
 {
-    Q_Q(QtMaterialSearchBar);
+  Q_Q(QtMaterialSearchBar);
 
-    surface = new QFrame(q);
-    surface->setObjectName("materialSearchBarSurface");
-    surface->setFrameShape(QFrame::NoFrame);
+  layout = new QHBoxLayout(q);
+  layout->setContentsMargins(12, 8, 12, 8);
+  layout->setSpacing(8);
 
-    layout = new QHBoxLayout(q);
-    layout->setContentsMargins(16, 8, 16, 8);
-    layout->setSpacing(8);
+  leadingButton = new QToolButton(q);
+  leadingButton->setAutoRaise(true);
+  leadingButton->setToolTip("Navigation");
+  leadingButton->setIcon(q->style()->standardIcon(QStyle::SP_ArrowBack));
 
-    inputLayout = new QHBoxLayout;
-    inputLayout->setContentsMargins(0, 0, 0, 0);
-    inputLayout->setSpacing(4);
+  clearButton = new QToolButton(q);
+  clearButton->setAutoRaise(true);
+  clearButton->setToolTip("Clear");
+  clearButton->setIcon(q->style()->standardIcon(QStyle::SP_LineEditClearButton));
 
-    leadingButton = new QToolButton(q);
-    leadingButton->setAutoRaise(true);
-    leadingButton->setToolTip("Navigation");
+  field = new QtMaterialSearchField(q);
+  field->setPlaceholderText("Search");
+  field->setShowLabel(false);
+  field->setShowInputLine(false);
+  field->setShowSearchIcon(false);
+  field->setShowClearButton(false);
+  field->installEventFilter(q);
 
-    clearButton = new QToolButton(q);
-    clearButton->setAutoRaise(true);
-    clearButton->setToolTip("Clear");
+  layout->addWidget(leadingButton);
+  layout->addWidget(field, 1);
+  layout->addWidget(clearButton);
 
-    field = new QtMaterialSearchField(q);
-    field->setPlaceholderText("Search");
-    field->installEventFilter(q);
+  q->setLayout(layout);
+  q->setMinimumHeight(56);
 
-    layout->addWidget(leadingButton);
-    layout->addWidget(field, 1);
-    layout->addStretch(0);
-    layout->addWidget(clearButton);
+  QObject::connect(field, SIGNAL(textChanged(QString)), q, SIGNAL(textChanged(QString)));
+  QObject::connect(field, SIGNAL(cleared()), q, SIGNAL(cleared()));
+  QObject::connect(field, SIGNAL(searchRequested(QString)), q, SIGNAL(searchRequested(QString)));
+  QObject::connect(clearButton, SIGNAL(clicked(bool)), q, SLOT(clear()));
+  QObject::connect(leadingButton, SIGNAL(clicked(bool)), q, SLOT(collapse()));
 
-    q->setLayout(layout);
-    q->setMinimumHeight(56);
-
-    QObject::connect(field, SIGNAL(textChanged(QString)), q, SIGNAL(textChanged(QString)));
-    QObject::connect(field, SIGNAL(cleared()), q, SIGNAL(cleared()));
-    QObject::connect(field, SIGNAL(searchRequested(QString)), q, SIGNAL(searchRequested(QString)));
-    QObject::connect(clearButton, SIGNAL(clicked(bool)), q, SLOT(clear()));
-    QObject::connect(leadingButton, SIGNAL(clicked(bool)), q, SLOT(collapse()));
-
-    updateColors();
+  QObject::connect(field, &QLineEdit::textChanged, q, [this](const QString &) {
     updateVisibility();
+  });
+
+  updateColors();
+  updateVisibility();
 }
 
 void QtMaterialSearchBarPrivate::updateColors()
 {
-    Q_Q(QtMaterialSearchBar);
-    const QString style = QString(
-        "QFrame#materialSearchBarSurface {"
-        " background: %1;"
-        " border-bottom: 1px solid %2;"
-        " border-radius: 0px;"
-        "}").arg(backgroundColor.name(), dividerColor.name());
-    q->setStyleSheet(style);
-    Q_UNUSED(q)
+  Q_Q(QtMaterialSearchBar);
+
+  q->setStyleSheet(QString(
+                     "QtMaterialSearchBar {"
+                     " background: %1;"
+                     " border: none;"
+                     " border-bottom: 1px solid %2;"
+                     "}"
+                     "QToolButton {"
+                     " background: transparent;"
+                     " border: none;"
+                     " padding: 0px;"
+                     "}"
+                     ).arg(backgroundColor.name(), dividerColor.name()));
+
+  field->setUseThemeColors(false);
+  field->setTextColor(textColor);
+  field->setLabelColor(placeholderColor);
+  field->setIconColor(iconColor);
 }
 
 void QtMaterialSearchBarPrivate::updateVisibility()
 {
-    leadingButton->setVisible(showLeadingNavigationIcon);
-    clearButton->setVisible(active);
+  leadingButton->setVisible(showLeadingNavigationIcon);
+  clearButton->setVisible(active && showTrailingActions && !field->text().isEmpty());
 }
 
 QtMaterialSearchBar::QtMaterialSearchBar(QWidget *parent)
@@ -191,8 +203,9 @@ bool QtMaterialSearchBar::showLeadingNavigationIcon() const
 
 void QtMaterialSearchBar::setShowTrailingActions(bool value)
 {
-    Q_D(QtMaterialSearchBar);
-    d->showTrailingActions = value;
+  Q_D(QtMaterialSearchBar);
+  d->showTrailingActions = value;
+  d->updateVisibility();
 }
 
 bool QtMaterialSearchBar::showTrailingActions() const
