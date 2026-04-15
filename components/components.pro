@@ -60,6 +60,7 @@ SOURCES = $$PWD/qtmaterialdockedtoolbar.cpp \
     qtmaterialrichtooltip.cpp \
     qtmaterialscrollbar.cpp \
     qtmaterialscrollbar_internal.cpp \
+    qtmaterialsearchappbar.cpp \
     qtmaterialsearchfield.cpp \
     qtmaterialsearchview.cpp \
     qtmaterialsegmentedbutton.cpp \
@@ -189,6 +190,8 @@ HEADERS = $$PWD/qtmaterialdockedtoolbar.h \
     qtmaterialscrollbar.h \
     qtmaterialscrollbar_internal.h \
     qtmaterialscrollbar_p.h \
+    qtmaterialsearchappbar.h \
+    qtmaterialsearchappbar_p.h \
     qtmaterialsearchfield.h \
     qtmaterialsearchfield_p.h \
     qtmaterialsearchview.h \

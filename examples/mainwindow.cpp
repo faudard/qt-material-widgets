@@ -12,6 +12,7 @@
 #include "bannersettingseditor.h"
 #include "bottomappbarsettingseditor.h"
 #include "bottomsheetsettingseditor.h"
+#include "buttongroupsettingseditor.h"
 #include "carouselsettingseditor.h"
 #include "centeredslidersettingseditor.h"
 #include "checkboxsettingseditor.h"
@@ -44,6 +45,7 @@
 #include "rangeslidersettingseditor.h"
 #include "richtooltipsettingseditor.h"
 #include "scrollbarsettingseditor.h"
+#include "searchappbarsettingseditor.h"
 #include "searchbarsettingseditor.h"
 #include "searchfieldsettingseditor.h"
 #include "searchviewsettingseditor.h"
@@ -90,6 +92,7 @@ MainWindow::MainWindow(QWidget *parent)
     BannerSettingsEditor *banner = new BannerSettingsEditor;
     BottomAppBarSettingsEditor *bottomAppBar = new BottomAppBarSettingsEditor;
     BottomSheetSettingsEditor *bottomsheet = new BottomSheetSettingsEditor;
+    ButtonGroupSettingsEditor *buttonGroupEditor = new ButtonGroupSettingsEditor;
     CarouselSettingsEditor *carousel = new CarouselSettingsEditor;
     CenteredSliderSettingsEditor *centeredSlider = new CenteredSliderSettingsEditor;
     CheckBoxSettingsEditor *checkbox = new CheckBoxSettingsEditor;
@@ -122,6 +125,7 @@ MainWindow::MainWindow(QWidget *parent)
     DateRangePickerSettingsEditor *dateRangePicker = new DateRangePickerSettingsEditor;
     RichTooltipSettingsEditor *richTooltip = new RichTooltipSettingsEditor;
     ScrollBarSettingsEditor *scrollBar = new ScrollBarSettingsEditor;
+    SearchAppBarSettingsEditor *searchAppBar = new SearchAppBarSettingsEditor(this);
     SearchBarSettingsEditor *searchBarEditor = new SearchBarSettingsEditor;
     SearchFieldSettingsEditor *searchField = new SearchFieldSettingsEditor;
     SearchViewSettingsEditor *searchView = new SearchViewSettingsEditor(this);
@@ -153,6 +157,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(banner);
     stack->addWidget(bottomAppBar);
     stack->addWidget(bottomsheet);
+    stack->addWidget(buttonGroupEditor);
     stack->addWidget(carousel);
     stack->addWidget(centeredSlider);
     stack->addWidget(checkbox);
@@ -185,6 +190,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(dateRangePicker);
     stack->addWidget(richTooltip);
     stack->addWidget(scrollBar);
+    stack->addWidget(searchAppBar);
     stack->addWidget(searchBarEditor);
     stack->addWidget(searchField);
     stack->addWidget(searchView);
@@ -216,6 +222,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Banner");
     list->addItem("Bottom App Bar");
     list->addItem("BottomSheet");
+    list->addItem("Button Group");
     list->addItem("Carousel");
     list->addItem("Centered Slider");
     list->addItem("Checkbox");
@@ -248,6 +255,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Range Slider");
     list->addItem(QStringLiteral("Rich Tooltip"));
     list->addItem("ScrollBar");
+    list->addItem("Search App Bar");
     list->addItem("Search Bar");
     list->addItem("Search Field");
     list->addItem("Search View");

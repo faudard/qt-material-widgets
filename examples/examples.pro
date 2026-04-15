@@ -43,6 +43,7 @@ SOURCES = $$PWD/toolbarvariantssettingseditor.cpp \
     rangeslidersettingseditor.cpp \
     richtooltipsettingseditor.cpp \
     scrollbarsettingseditor.cpp \
+    searchappbarsettingseditor.cpp \
     searchfieldsettingseditor.cpp \
     searchviewsettingseditor.cpp \
     segmentedbuttonsettingseditor.cpp \
@@ -104,6 +105,7 @@ HEADERS = $$PWD/toolbarvariantssettingseditor.h \
     rangeslidersettingseditor.h \
     richtooltipsettingseditor.h \
     scrollbarsettingseditor.h \
+    searchappbarsettingseditor.h \
     searchfieldsettingseditor.h \
     searchviewsettingseditor.h \
     segmentedbuttonsettingseditor.h \
