@@ -3,10 +3,13 @@
 
 #include "qtmaterialtextfield_p.h"
 
+#include <QStringList>
+
 class QWidget;
 class QVBoxLayout;
-class QtMaterialAutoCompleteOverlay;
 class QtMaterialAutoCompleteStateMachine;
+class QtMaterialFlatButton;
+class QtMaterialAutoComplete;
 
 class QtMaterialAutoCompletePrivate : public QtMaterialTextFieldPrivate
 {
@@ -14,17 +17,31 @@ class QtMaterialAutoCompletePrivate : public QtMaterialTextFieldPrivate
     Q_DECLARE_PUBLIC(QtMaterialAutoComplete)
 
 public:
-    QtMaterialAutoCompletePrivate(QtMaterialAutoComplete *q);
+    explicit QtMaterialAutoCompletePrivate(QtMaterialAutoComplete *q);
     virtual ~QtMaterialAutoCompletePrivate();
 
     void init();
+    void syncMenuGeometry();
+    void updateMenuButtons(const QStringList &results);
+    void updateMenuButtonStyles();
+    void setHighlightedIndex(int value);
+    void activateIndex(int value);
 
-    QWidget                            *menu;
-    QWidget                            *frame;
+    QWidget *menu;
+    QWidget *frame;
     QtMaterialAutoCompleteStateMachine *stateMachine;
-    QVBoxLayout                        *menuLayout;
-    QStringList                         dataSource;
-    int                                 maxWidth;
+    QVBoxLayout *menuLayout;
+    QStringList dataSource;
+    QStringList visibleResults;
+    QList<QtMaterialFlatButton *> buttons;
+    int maxWidth;
+    int maxVisibleItems;
+    int highlightedIndex;
+    Qt::CaseSensitivity caseSensitivity;
+    int filterMode;
+    QColor menuBackgroundColor;
+    QColor menuTextColor;
+    QColor menuSelectedColor;
 };
 
 #endif // QTMATERIALAUTOCOMPLETE_P_H

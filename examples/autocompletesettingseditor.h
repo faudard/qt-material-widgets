@@ -2,10 +2,12 @@
 #define AUTOCOMPLETESETTINGSEDITOR_H
 
 #include <QWidget>
-//#include "ui_autocompletesettingsform.h"
 
-#include "lib/qtmaterialoverlaywidget.h"
-
+class QCheckBox;
+class QComboBox;
+class QLabel;
+class QSlider;
+class QToolButton;
 class QtMaterialAutoComplete;
 
 class AutoCompleteSettingsEditor : public QWidget
@@ -20,10 +22,22 @@ protected slots:
     void setupForm();
     void updateWidget();
     void selectColor();
+    void handleItemSelected(const QString &text);
 
 private:
-    //Ui::AutoCompleteSettingsForm *const ui;
-    QtMaterialAutoComplete       *const m_autocomplete;
+    QCheckBox *const m_useThemeColors;
+    QCheckBox *const m_showLabel;
+    QComboBox *const m_filterMode;
+    QComboBox *const m_caseSensitivity;
+    QSlider *const m_maxVisibleItems;
+    QToolButton *const m_menuBackgroundButton;
+    QToolButton *const m_menuTextButton;
+    QToolButton *const m_menuSelectedButton;
+    QLabel *const m_menuBackgroundValue;
+    QLabel *const m_menuTextValue;
+    QLabel *const m_menuSelectedValue;
+    QLabel *const m_statusLabel;
+    QtMaterialAutoComplete *const m_autocomplete;
 };
 
 #endif // AUTOCOMPLETESETTINGSEDITOR_H
