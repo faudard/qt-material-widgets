@@ -30,6 +30,7 @@
 #include "imagelistsettingseditor.h"
 #include "listitemsettingseditor.h"
 #include "listsettingseditor.h"
+#include "loadingindicatorsettingseditor.h"
 #include "loadingprogresssettingseditor.h"
 #include "menusettingseditor.h"
 #include "navigationrailsettingseditor.h"
@@ -103,6 +104,7 @@ MainWindow::MainWindow(QWidget *parent)
     ImageListSettingsEditor *imageList = new ImageListSettingsEditor(this);
     ListSettingsEditor *materialList = new ListSettingsEditor;
     ListItemSettingsEditor *listItem = new ListItemSettingsEditor;
+    LoadingIndicatorSettingsEditor *loadingIndicator = new LoadingIndicatorSettingsEditor(this);
     LoadingProgressSettingsEditor *loadingProgress = new LoadingProgressSettingsEditor;
     MenuSettingsEditor *menu = new MenuSettingsEditor;
     NavigationSettingsEditor *navigation = new NavigationSettingsEditor;
@@ -161,6 +163,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(imageList);
     stack->addWidget(materialList);
     stack->addWidget(listItem);
+    stack->addWidget(loadingIndicator);
     stack->addWidget(loadingProgress);
     stack->addWidget(menu);
     stack->addWidget(navigation);
@@ -219,6 +222,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Image List");
     list->addItem("List");
     list->addItem("List Item");
+    list->addItem("Loading Indicator");
     list->addItem("Loading + Progress");
     list->addItem("Menu");
     list->addItem("Navigation Bar");

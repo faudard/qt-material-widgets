@@ -26,6 +26,7 @@ SOURCES = appbarsettingseditor.cpp \
     imagelistsettingseditor.cpp \
     listitemsettingseditor.cpp \
     listsettingseditor.cpp \
+    loadingindicatorsettingseditor.cpp \
     loadingprogresssettingseditor.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -81,6 +82,7 @@ HEADERS = appbarsettingseditor.h \
     imagelistsettingseditor.h \
     listitemsettingseditor.h \
     listsettingseditor.h \
+    loadingindicatorsettingseditor.h \
     loadingprogresssettingseditor.h \
     mainwindow.h \
     menusettingseditor.h \

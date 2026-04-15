@@ -40,6 +40,7 @@ SOURCES = layouts/qtmaterialsnackbarlayout.cpp \
     qtmaterialimagelist.cpp \
     qtmateriallist.cpp \
     qtmateriallistitem.cpp \
+    qtmaterialloadingindicator.cpp \
     qtmaterialmenu.cpp \
     qtmaterialmenu_internal.cpp \
     qtmaterialnavigationbar.cpp \
@@ -47,6 +48,7 @@ SOURCES = layouts/qtmaterialsnackbarlayout.cpp \
     qtmaterialpaper.cpp \
     qtmaterialprogress.cpp \
     qtmaterialprogress_internal.cpp \
+    qtmaterialpulltorefresh.cpp \
     qtmaterialradiobutton.cpp \
     qtmaterialraisedbutton.cpp \
     qtmaterialrangeslider.cpp \
@@ -144,6 +146,8 @@ HEADERS = layouts/qtmaterialsnackbarlayout.h \
     qtmateriallist_p.h \
     qtmateriallistitem.h \
     qtmateriallistitem_p.h \
+    qtmaterialloadingindicator.h \
+    qtmaterialloadingindicator_p.h \
     qtmaterialmenu.h \
     qtmaterialmenu_internal.h \
     qtmaterialmenu_p.h \
@@ -156,6 +160,8 @@ HEADERS = layouts/qtmaterialsnackbarlayout.h \
     qtmaterialprogress.h \
     qtmaterialprogress_internal.h \
     qtmaterialprogress_p.h \
+    qtmaterialpulltorefresh.h \
+    qtmaterialpulltorefresh_p.h \
     qtmaterialradiobutton.h \
     qtmaterialradiobutton_p.h \
     qtmaterialraisedbutton.h \
