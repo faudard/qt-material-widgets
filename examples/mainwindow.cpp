@@ -13,6 +13,7 @@
 #include "bottomappbarsettingseditor.h"
 #include "bottomsheetsettingseditor.h"
 #include "carouselsettingseditor.h"
+#include "centeredslidersettingseditor.h"
 #include "checkboxsettingseditor.h"
 #include "circularprogresssettingseditor.h"
 #include "connectedbuttongroupsettingseditor.h"
@@ -87,6 +88,7 @@ MainWindow::MainWindow(QWidget *parent)
     BottomAppBarSettingsEditor *bottomAppBar = new BottomAppBarSettingsEditor;
     BottomSheetSettingsEditor *bottomsheet = new BottomSheetSettingsEditor;
     CarouselSettingsEditor *carousel = new CarouselSettingsEditor;
+    CenteredSliderSettingsEditor *centeredSlider = new CenteredSliderSettingsEditor;
     CheckBoxSettingsEditor *checkbox = new CheckBoxSettingsEditor;
     CircularProgressSettingsEditor *circularProgress = new CircularProgressSettingsEditor;
     ConnectedButtonGroupSettingsEditor *connectedButtonGroupEditor = new ConnectedButtonGroupSettingsEditor;
@@ -146,6 +148,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(bottomAppBar);
     stack->addWidget(bottomsheet);
     stack->addWidget(carousel);
+    stack->addWidget(centeredSlider);
     stack->addWidget(checkbox);
     stack->addWidget(circularProgress);
     stack->addWidget(connectedButtonGroupEditor);
@@ -205,6 +208,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Bottom App Bar");
     list->addItem("BottomSheet");
     list->addItem("Carousel");
+    list->addItem("Centered Slider");
     list->addItem("Checkbox");
     list->addItem("Circular Progress");
     list->addItem("Connected Button");

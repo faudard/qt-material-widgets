@@ -20,6 +20,7 @@ SOURCES = layouts/qtmaterialsnackbarlayout.cpp \
     qtmaterialbottomappbar.cpp \
     qtmaterialbottomsheet.cpp \
     qtmaterialcarousel.cpp \
+    qtmaterialcenteredslider.cpp \
     qtmaterialcheckbox.cpp \
     qtmaterialcircularprogress.cpp \
     qtmaterialcircularprogress_internal.cpp \
@@ -112,6 +113,8 @@ HEADERS = layouts/qtmaterialsnackbarlayout.h \
     qtmaterialbottomsheet_p.h \
     qtmaterialcarousel.h \
     qtmaterialcarousel_p.h \
+    qtmaterialcenteredslider.h \
+    qtmaterialcenteredslider_p.h \
     qtmaterialcheckbox.h \
     qtmaterialcheckbox_p.h \
     qtmaterialcircularprogress.h \

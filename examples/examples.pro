@@ -12,6 +12,7 @@ SOURCES = appbarsettingseditor.cpp \
     bottomappbarsettingseditor.cpp \
     bottomsheetsettingseditor.cpp \
     carouselsettingseditor.cpp \
+    centeredslidersettingseditor.cpp \
     checkboxsettingseditor.cpp \
     circularprogresssettingseditor.cpp \
     datetimepickersettingseditor.cpp \
@@ -68,6 +69,7 @@ HEADERS = appbarsettingseditor.h \
     bottomappbarsettingseditor.h \
     bottomsheetsettingseditor.h \
     carouselsettingseditor.h \
+    centeredslidersettingseditor.h \
     checkboxsettingseditor.h \
     circularprogresssettingseditor.h \
     datetimepickersettingseditor.h \
