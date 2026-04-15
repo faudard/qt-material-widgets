@@ -16,6 +16,7 @@ SOURCES = layouts/qtmaterialsnackbarlayout.cpp \
     qtmaterialautocomplete_internal.cpp \
     qtmaterialavatar.cpp \
     qtmaterialbadge.cpp \
+    qtmaterialbottomsheet.cpp \
     qtmaterialcarousel.cpp \
     qtmaterialcheckbox.cpp \
     qtmaterialcircularprogress.cpp \
@@ -87,6 +88,8 @@ HEADERS = layouts/qtmaterialsnackbarlayout.h \
     qtmaterialavatar_p.h \
     qtmaterialbadge.h \
     qtmaterialbadge_p.h \
+    qtmaterialbottomsheet.h \
+    qtmaterialbottomsheet_p.h \
     qtmaterialcarousel.h \
     qtmaterialcarousel_p.h \
     qtmaterialcheckbox.h \

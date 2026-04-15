@@ -5,10 +5,12 @@
 #include <QStackedLayout>
 #include <QWidget>
 
+
 #include "appbarsettingseditor.h"
 #include "autocompletesettingseditor.h"
 #include "avatarsettingseditor.h"
 #include "badgesettingseditor.h"
+#include "bottomsheetsettingseditor.h"
 #include "carouselsettingseditor.h"
 #include "checkboxsettingseditor.h"
 #include "circularprogresssettingseditor.h"
@@ -64,6 +66,7 @@ MainWindow::MainWindow(QWidget *parent)
     AutoCompleteSettingsEditor *autocomplete = new AutoCompleteSettingsEditor;
     AvatarSettingsEditor *avatar = new AvatarSettingsEditor;
     BadgeSettingsEditor *badge = new BadgeSettingsEditor;
+    BottomSheetSettingsEditor*bottomsheet= new BottomSheetSettingsEditor;
     CarouselSettingsEditor *carousel = new CarouselSettingsEditor;
     CheckBoxSettingsEditor *checkbox = new CheckBoxSettingsEditor;
     CircularProgressSettingsEditor *circularProgress = new CircularProgressSettingsEditor;
@@ -104,6 +107,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(autocomplete);
     stack->addWidget(avatar);
     stack->addWidget(badge);
+    stack->addWidget(bottomsheet);
     stack->addWidget(carousel);
     stack->addWidget(checkbox);
     stack->addWidget(circularProgress);
@@ -144,6 +148,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Auto Complete");
     list->addItem("Avatar");
     list->addItem("Badge");
+    list->addItem("BottomSheet");
     list->addItem("Carousel");
     list->addItem("Checkbox");
     list->addItem("Circular Progress");
