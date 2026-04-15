@@ -15,6 +15,7 @@
 #include "carouselsettingseditor.h"
 #include "checkboxsettingseditor.h"
 #include "circularprogresssettingseditor.h"
+#include "connectedbuttongroupsettingseditor.h"
 #include "daterangepickersettingseditor.h"
 #include "datetimepickersettingseditor.h"
 #include "dialogsettingseditor.h"
@@ -85,6 +86,7 @@ MainWindow::MainWindow(QWidget *parent)
     CarouselSettingsEditor *carousel = new CarouselSettingsEditor;
     CheckBoxSettingsEditor *checkbox = new CheckBoxSettingsEditor;
     CircularProgressSettingsEditor *circularProgress = new CircularProgressSettingsEditor;
+    ConnectedButtonGroupSettingsEditor *connectedButtonGroupEditor = new ConnectedButtonGroupSettingsEditor;
     RaisedButtonSettingsEditor *raisedButton = new RaisedButtonSettingsEditor;
     DateTimePickerSettingsEditor *dateTimePicker = new DateTimePickerSettingsEditor;
     DialogSettingsEditor *dialog = new DialogSettingsEditor;
@@ -140,6 +142,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(carousel);
     stack->addWidget(checkbox);
     stack->addWidget(circularProgress);
+    stack->addWidget(connectedButtonGroupEditor);
     stack->addWidget(raisedButton);
     stack->addWidget(dateTimePicker);
     stack->addWidget(dialog);
@@ -195,6 +198,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Carousel");
     list->addItem("Checkbox");
     list->addItem("Circular Progress");
+    list->addItem("Connected Button");
     list->addItem("Date Range Picker");
     list->addItem("Date && Time Picker");
     list->addItem("Dialog");
