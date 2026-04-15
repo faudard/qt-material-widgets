@@ -1,3 +1,5 @@
+#include "sidesheetsettingseditor.h"
+
 #include "bannersettingseditor.h"
 
 #include "mainwindow.h"
@@ -49,6 +51,7 @@
 #include "toolbarsettingseditor.h"
 #include "tooltipsettingseditor.h"
 #include "treesettingseditor.h"
+#include "expansionPanelSettingsEditor.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -96,11 +99,13 @@ MainWindow::MainWindow(QWidget *parent)
     SearchFieldSettingsEditor *searchField = new SearchFieldSettingsEditor;
     SegmentedButtonSettingsEditor *segmentedButton = new SegmentedButtonSettingsEditor;
     SelectFieldSettingsEditor *selectField = new SelectFieldSettingsEditor;
+    SideSheetSettingsEditor *sideSheet = new SideSheetSettingsEditor(this);
     SliderSettingsEditor *slider = new SliderSettingsEditor;
     SnackbarSettingsEditor *snackbar = new SnackbarSettingsEditor;
     SnackbarLayoutSettingsEditor *snackbarLayout = new SnackbarLayoutSettingsEditor;
     StepperSettingsEditor *stepper = new StepperSettingsEditor;
     SubheaderSettingsEditor *subheader = new SubheaderSettingsEditor;
+    ExpansionPanelSettingsEditor *expansionPanel = new ExpansionPanelSettingsEditor(this);
     TableSettingsEditor *table = new TableSettingsEditor;
     TabsSettingsEditor *tabs = new TabsSettingsEditor;
     TextFieldSettingsEditor *textField = new TextFieldSettingsEditor;
@@ -140,6 +145,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(searchField);
     stack->addWidget(segmentedButton);
     stack->addWidget(selectField);
+    stack->addWidget(sideSheet);
     stack->addWidget(slider);
     stack->addWidget(snackbar);
     stack->addWidget(snackbarLayout);
@@ -152,12 +158,13 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(toolbar);
     stack->addWidget(tooltip);
     stack->addWidget(tree);
+    stack->addWidget(expansionPanel);
 
     list->addItem("App Bar");
     list->addItem("Auto Complete");
     list->addItem("Avatar");
     list->addItem("Badge");
-    list->addItem(QStringLiteral("Banner"));
+    list->addItem("Banner");
     list->addItem("BottomSheet");
     list->addItem("Carousel");
     list->addItem("Checkbox");
@@ -184,6 +191,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Search Field");
     list->addItem("Segmented Button");
     list->addItem("Select Field");
+    list->addItem("Side Sheet");
     list->addItem("Slider");
     list->addItem("Snackbar");
     list->addItem("Snackbar Layout");
@@ -196,6 +204,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Toolbar");
     list->addItem("Tooltips");
     list->addItem("Tree");
+    list->addItem("Expansion Panel");
 
 
     list->setCurrentRow(0);

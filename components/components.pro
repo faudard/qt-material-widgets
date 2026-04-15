@@ -28,6 +28,7 @@ SOURCES = layouts/qtmaterialsnackbarlayout.cpp \
     qtmaterialdivider.cpp \
     qtmaterialdrawer.cpp \
     qtmaterialdrawer_internal.cpp \
+    qtmaterialexpansionpanel.cpp \
     qtmaterialfab.cpp \
     qtmaterialflatbutton.cpp \
     qtmaterialflatbutton_internal.cpp \
@@ -50,6 +51,7 @@ SOURCES = layouts/qtmaterialsnackbarlayout.cpp \
     qtmaterialsearchfield.cpp \
     qtmaterialsegmentedbutton.cpp \
     qtmaterialselectfield.cpp \
+    qtmaterialsidesheet.cpp \
     qtmaterialslider.cpp \
     qtmaterialslider_internal.cpp \
     qtmaterialsnackbar.cpp \
@@ -110,6 +112,8 @@ HEADERS = layouts/qtmaterialsnackbarlayout.h \
     qtmaterialdrawer.h \
     qtmaterialdrawer_internal.h \
     qtmaterialdrawer_p.h \
+    qtmaterialexpansionpanel.h \
+    qtmaterialexpansionpanel_p.h \
     qtmaterialfab.h \
     qtmaterialfab_p.h \
     qtmaterialflatbutton.h \
@@ -148,6 +152,8 @@ HEADERS = layouts/qtmaterialsnackbarlayout.h \
     qtmaterialsearchfield_p.h \
     qtmaterialsegmentedbutton.h \
     qtmaterialsegmentedbutton_p.h \
+    qtmaterialsidesheet.h \
+    qtmaterialsidesheet_p.h \
     qtmaterialslider.h \
     qtmaterialslider_internal.h \
     qtmaterialslider_p.h \

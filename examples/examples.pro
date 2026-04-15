@@ -16,6 +16,7 @@ SOURCES = appbarsettingseditor.cpp \
     datetimepickersettingseditor.cpp \
     dialogsettingseditor.cpp \
     drawersettingseditor.cpp \
+    expansionpanelsettingseditor.cpp \
     fabsettingseditor.cpp \
     flatbuttonsettingseditor.cpp \
     gridlistsettingseditor.cpp \
@@ -36,6 +37,7 @@ SOURCES = appbarsettingseditor.cpp \
     searchfieldsettingseditor.cpp \
     segmentedbuttonsettingseditor.cpp \
     selectfieldsettingseditor.cpp \
+    sidesheetsettingseditor.cpp \
     slidersettingseditor.cpp \
     snackbarlayoutsettingseditor.cpp \
     snackbarsettingseditor.cpp \
@@ -60,6 +62,7 @@ HEADERS = appbarsettingseditor.h \
     datetimepickersettingseditor.h \
     dialogsettingseditor.h \
     drawersettingseditor.h \
+    expansionpanelsettingseditor.h \
     fabsettingseditor.h \
     flatbuttonsettingseditor.h \
     gridlistsettingseditor.h \
@@ -81,6 +84,7 @@ HEADERS = appbarsettingseditor.h \
     searchfieldsettingseditor.h \
     segmentedbuttonsettingseditor.h \
     selectfieldsettingseditor.h \
+    sidesheetsettingseditor.h \
     slidersettingseditor.h \
     snackbarlayoutsettingseditor.h \
     snackbarsettingseditor.h \
