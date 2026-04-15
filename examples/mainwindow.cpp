@@ -12,6 +12,7 @@
 #include "checkboxsettingseditor.h"
 #include "circularprogresssettingseditor.h"
 #include "dialogsettingseditor.h"
+#include "dividersettingseditor.h"
 #include "drawersettingseditor.h"
 #include "fabsettingseditor.h"
 #include "flatbuttonsettingseditor.h"
@@ -64,6 +65,7 @@ MainWindow::MainWindow(QWidget *parent)
     TabsSettingsEditor *tabs = new TabsSettingsEditor;
     SnackbarSettingsEditor *snackbar = new SnackbarSettingsEditor;
     DialogSettingsEditor *dialog = new DialogSettingsEditor;
+    DividerSettingsEditor *divider = new DividerSettingsEditor;
     DrawerSettingsEditor *drawer = new DrawerSettingsEditor;
     ScrollBarSettingsEditor *scrollBar = new ScrollBarSettingsEditor;
     AppBarSettingsEditor *appBar = new AppBarSettingsEditor;
@@ -79,6 +81,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(checkbox);
     stack->addWidget(circularProgress);
     stack->addWidget(dialog);
+    stack->addWidget(divider);
     stack->addWidget(drawer);
     stack->addWidget(fab);
     stack->addWidget(flatButton);
@@ -105,6 +108,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Checkbox");
     list->addItem("Circular Progress");
     list->addItem("Dialog");
+    list->addItem("Divider");
     list->addItem("Drawer");
     list->addItem("Floating Action Button");
     list->addItem("Flat Button");

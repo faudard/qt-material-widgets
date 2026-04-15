@@ -3,6 +3,7 @@ QT += core gui widgets
 TEMPLATE = lib
 CONFIG += staticlib
 SOURCES = \
+    qtmaterialdivider.cpp \
     qtmaterialavatar.cpp \
     lib/qtmaterialstyle.cpp \
     lib/qtmaterialtheme.cpp \
