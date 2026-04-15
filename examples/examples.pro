@@ -35,6 +35,7 @@ SOURCES = appbarsettingseditor.cpp \
     radiobuttonsettingseditor.cpp \
     raisedbuttonsettingseditor.cpp \
     rangeslidersettingseditor.cpp \
+    richtooltipsettingseditor.cpp \
     scrollbarsettingseditor.cpp \
     searchfieldsettingseditor.cpp \
     segmentedbuttonsettingseditor.cpp \
@@ -85,6 +86,7 @@ HEADERS = appbarsettingseditor.h \
     radiobuttonsettingseditor.h \
     raisedbuttonsettingseditor.h \
     rangeslidersettingseditor.h \
+    richtooltipsettingseditor.h \
     scrollbarsettingseditor.h \
     searchfieldsettingseditor.h \
     segmentedbuttonsettingseditor.h \

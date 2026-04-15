@@ -15,6 +15,7 @@
 #include "carouselsettingseditor.h"
 #include "checkboxsettingseditor.h"
 #include "circularprogresssettingseditor.h"
+#include "daterangepickersettingseditor.h"
 #include "datetimepickersettingseditor.h"
 #include "dialogsettingseditor.h"
 #include "dividersettingseditor.h"
@@ -35,6 +36,7 @@
 #include "radiobuttonsettingseditor.h"
 #include "raisedbuttonsettingseditor.h"
 #include "rangeslidersettingseditor.h"
+#include "richtooltipsettingseditor.h"
 #include "scrollbarsettingseditor.h"
 #include "searchfieldsettingseditor.h"
 #include "segmentedbuttonsettingseditor.h"
@@ -53,7 +55,6 @@
 #include "toolbarsettingseditor.h"
 #include "tooltipsettingseditor.h"
 #include "treesettingseditor.h"
-#include "daterangepickersettingseditor.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -80,6 +81,7 @@ MainWindow::MainWindow(QWidget *parent)
     CarouselSettingsEditor *carousel = new CarouselSettingsEditor;
     CheckBoxSettingsEditor *checkbox = new CheckBoxSettingsEditor;
     CircularProgressSettingsEditor *circularProgress = new CircularProgressSettingsEditor;
+    RaisedButtonSettingsEditor *raisedButton = new RaisedButtonSettingsEditor;
     DateTimePickerSettingsEditor *dateTimePicker = new DateTimePickerSettingsEditor;
     DialogSettingsEditor *dialog = new DialogSettingsEditor;
     DividerSettingsEditor *divider = new DividerSettingsEditor;
@@ -98,9 +100,9 @@ MainWindow::MainWindow(QWidget *parent)
     PaperSettingsEditor *paper = new PaperSettingsEditor;
     ProgressSettingsEditor *progress = new ProgressSettingsEditor;
     RadioButtonSettingsEditor *radioButton = new RadioButtonSettingsEditor;
-    RaisedButtonSettingsEditor *raisedButton = new RaisedButtonSettingsEditor;
     RangeSliderSettingsEditor *rangeSlider = new RangeSliderSettingsEditor;
     DateRangePickerSettingsEditor *dateRangePicker = new DateRangePickerSettingsEditor;
+    RichTooltipSettingsEditor *richTooltip = new RichTooltipSettingsEditor;
     ScrollBarSettingsEditor *scrollBar = new ScrollBarSettingsEditor;
     SearchFieldSettingsEditor *searchField = new SearchFieldSettingsEditor;
     SegmentedButtonSettingsEditor *segmentedButton = new SegmentedButtonSettingsEditor;
@@ -130,6 +132,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(carousel);
     stack->addWidget(checkbox);
     stack->addWidget(circularProgress);
+    stack->addWidget(raisedButton);
     stack->addWidget(dateTimePicker);
     stack->addWidget(dialog);
     stack->addWidget(divider);
@@ -148,9 +151,9 @@ MainWindow::MainWindow(QWidget *parent)
     stack->addWidget(paper);
     stack->addWidget(progress);
     stack->addWidget(radioButton);
-    stack->addWidget(raisedButton);
     stack->addWidget(rangeSlider);
     stack->addWidget(dateRangePicker);
+    stack->addWidget(richTooltip);
     stack->addWidget(scrollBar);
     stack->addWidget(searchField);
     stack->addWidget(segmentedButton);
@@ -180,6 +183,7 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Carousel");
     list->addItem("Checkbox");
     list->addItem("Circular Progress");
+    list->addItem("Date Range Picker");
     list->addItem("Date && Time Picker");
     list->addItem("Dialog");
     list->addItem("Divider");
@@ -198,9 +202,9 @@ MainWindow::MainWindow(QWidget *parent)
     list->addItem("Paper");
     list->addItem("Progress");
     list->addItem("Radio Button");
-    list->addItem("Date Range Picker");
     list->addItem("Raised Button");
     list->addItem("Range Slider");
+    list->addItem(QStringLiteral("Rich Tooltip"));
     list->addItem("ScrollBar");
     list->addItem("Search Field");
     list->addItem("Segmented Button");
