@@ -2,10 +2,10 @@
 #define BADGESETTINGSEDITOR_H
 
 #include <QWidget>
-#include "ui_badgesettingsform.h"
 
-class QtMaterialAvatar;
 class QtMaterialBadge;
+class QtMaterialIconButton;
+class QtMaterialBadgeDecorator;
 
 class BadgeSettingsEditor : public QWidget
 {
@@ -13,17 +13,14 @@ class BadgeSettingsEditor : public QWidget
 
 public:
     explicit BadgeSettingsEditor(QWidget *parent = 0);
-    ~BadgeSettingsEditor();
 
-protected slots:
-    void setupForm();
-    void updateWidget();
-    void selectColor();
+private slots:
+    void updateBadge();
 
 private:
-    Ui::BadgeSettingsForm *const ui;
-    QtMaterialAvatar      *const m_avatar;
-    QtMaterialBadge       *const m_badge;
+    QtMaterialBadge *m_badge;
+    QtMaterialIconButton *m_targetButton;
+    QtMaterialBadgeDecorator *m_decorator;
 };
 
 #endif // BADGESETTINGSEDITOR_H

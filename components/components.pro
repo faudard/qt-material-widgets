@@ -4,6 +4,14 @@ TEMPLATE = lib
 CONFIG += staticlib
 SOURCES = $$PWD/qtmaterialdockedtoolbar.cpp \
     $$PWD/qtmaterialfloatingtoolbar.cpp \
+    $$PWD/qtmaterialfulldialog.cpp \
+    $$PWD/qtmaterialsheethandle.cpp \
+    components/qtmateriallargetopappbar.cpp \
+    components/qtmaterialmediumtopappbar.cpp \
+    components/qtmaterialmodalsidesheet.cpp \
+    components/qtmaterialresponsivenavigation.cpp \
+    components/qtmaterialsmalltopappbar.cpp \
+    components/qtmaterialstandardsidesheet.cpp \
     layouts/qtmaterialsnackbarlayout.cpp \
     lib/qtmaterialcheckable.cpp \
     lib/qtmaterialcheckable_internal.cpp \
@@ -14,6 +22,8 @@ SOURCES = $$PWD/qtmaterialdockedtoolbar.cpp \
     lib/qtmaterialstyle.cpp \
     lib/qtmaterialtheme.cpp \
     qtmaterialappbar.cpp \
+    qtmaterialappbarbehavior.cpp \
+    qtmaterialassistchip.cpp \
     qtmaterialautocomplete.cpp \
     qtmaterialautocomplete_internal.cpp \
     qtmaterialavatar.cpp \
@@ -35,19 +45,26 @@ SOURCES = $$PWD/qtmaterialdockedtoolbar.cpp \
     qtmaterialdrawer.cpp \
     qtmaterialdrawer_internal.cpp \
     qtmaterialexpansionpanel.cpp \
+    qtmaterialextendedfab.cpp \
     qtmaterialfab.cpp \
     qtmaterialfabmenu.cpp \
+    qtmaterialfilterchip.cpp \
     qtmaterialflatbutton.cpp \
     qtmaterialflatbutton_internal.cpp \
+    qtmaterialflexiblenavigationbar.cpp \
     qtmaterialgridlist.cpp \
     qtmaterialgridlistitem.cpp \
     qtmaterialiconbutton.cpp \
     qtmaterialimagelist.cpp \
+    qtmaterialinputchip.cpp \
+    qtmaterialinputtimepicker.cpp \
     qtmateriallist.cpp \
     qtmateriallistitem.cpp \
     qtmaterialloadingindicator.cpp \
     qtmaterialmenu.cpp \
     qtmaterialmenu_internal.cpp \
+    qtmaterialmodalbottomsheet.cpp \
+    qtmaterialnavigationbadgeintegration.cpp \
     qtmaterialnavigationbar.cpp \
     qtmaterialnavigationrail.cpp \
     qtmaterialpaper.cpp \
@@ -62,7 +79,9 @@ SOURCES = $$PWD/qtmaterialdockedtoolbar.cpp \
     qtmaterialscrollbar_internal.cpp \
     qtmaterialsearchappbar.cpp \
     qtmaterialsearchfield.cpp \
+    qtmaterialsearchsuggestionmodel.cpp \
     qtmaterialsearchview.cpp \
+    qtmaterialsearchviewitems.cpp \
     qtmaterialsegmentedbutton.cpp \
     qtmaterialselectfield.cpp \
     qtmaterialsidesheet.cpp \
@@ -73,12 +92,15 @@ SOURCES = $$PWD/qtmaterialdockedtoolbar.cpp \
     qtmaterialsnackbar_internal.cpp \
     qtmaterialspeeddial.cpp \
     qtmaterialsplitbutton.cpp \
+    qtmaterialstandardbottomsheet.cpp \
     qtmaterialstepper.cpp \
+    qtmaterialsuggestionchip.cpp \
     qtmaterialtable.cpp \
     qtmaterialtabs.cpp \
     qtmaterialtabs_internal.cpp \
     qtmaterialtextfield.cpp \
     qtmaterialtextfield_internal.cpp \
+    qtmaterialtimefield.cpp \
     qtmaterialtimepicker.cpp \
     qtmaterialtoggle.cpp \
     qtmaterialtoggle_internal.cpp \
@@ -88,10 +110,28 @@ SOURCES = $$PWD/qtmaterialdockedtoolbar.cpp \
     qtmaterialtree.cpp \
     qtmaterialtreeitem.cpp
 
-HEADERS = $$PWD/qtmaterialdockedtoolbar.h \
+HEADERS = $$PWD/qtmaterialappbarstatelayer_p.h \
+    $$PWD/qtmaterialdockedtoolbar.h \
     $$PWD/qtmaterialdockedtoolbar_p.h \
     $$PWD/qtmaterialfloatingtoolbar.h \
     $$PWD/qtmaterialfloatingtoolbar_p.h \
+    $$PWD/qtmaterialfulldialog.h \
+    $$PWD/qtmaterialfulldialog_p.h \
+    $$PWD/qtmaterialsheethandle.h \
+    $$PWD/qtmaterialsheethandle_p.h \
+    components/qtmateriallargetopappbar.h \
+    components/qtmateriallargetopappbar_p.h \
+    components/qtmaterialmediumtopappbar.h \
+    components/qtmaterialmediumtopappbar_p.h \
+    components/qtmaterialmodalsidesheet.h \
+    components/qtmaterialmodalsidesheet_p.h \
+    components/qtmaterialresponsivenavigation.h \
+    components/qtmaterialresponsivenavigation_p.h \
+    components/qtmaterialsmalltopappbar.h \
+    components/qtmaterialsmalltopappbar_p.h \
+    components/qtmaterialstandardsidesheet.h \
+    components/qtmaterialstandardsidesheet_p.h \
+    components/qtmaterialtopappbarscrollcontroller_p.h \
     layouts/qtmaterialsnackbarlayout.h \
     layouts/qtmaterialsnackbarlayout_p.h \
     lib/qtmaterialcheckable.h \
@@ -108,6 +148,9 @@ HEADERS = $$PWD/qtmaterialdockedtoolbar.h \
     lib/qtmaterialtheme_p.h \
     qtmaterialappbar.h \
     qtmaterialappbar_p.h \
+    qtmaterialappbarbehavior.h \
+    qtmaterialassistchip.h \
+    qtmaterialassistchip_p.h \
     qtmaterialautocomplete.h \
     qtmaterialautocomplete_internal.h \
     qtmaterialautocomplete_p.h \
@@ -144,13 +187,19 @@ HEADERS = $$PWD/qtmaterialdockedtoolbar.h \
     qtmaterialdrawer_p.h \
     qtmaterialexpansionpanel.h \
     qtmaterialexpansionpanel_p.h \
+    qtmaterialextendedfab.h \
+    qtmaterialextendedfab_p.h \
     qtmaterialfab.h \
     qtmaterialfab_p.h \
     qtmaterialfabmenu.h \
     qtmaterialfabmenu_p.h \
+    qtmaterialfilterchip.h \
+    qtmaterialfilterchip_p.h \
     qtmaterialflatbutton.h \
     qtmaterialflatbutton_internal.h \
     qtmaterialflatbutton_p.h \
+    qtmaterialflexiblenavigationbar.h \
+    qtmaterialflexiblenavigationbar_p.h \
     qtmaterialgridlist.h \
     qtmaterialgridlist_p.h \
     qtmaterialgridlistitem.h \
@@ -159,6 +208,10 @@ HEADERS = $$PWD/qtmaterialdockedtoolbar.h \
     qtmaterialiconbutton_p.h \
     qtmaterialimagelist.h \
     qtmaterialimagelist_p.h \
+    qtmaterialinputchip.h \
+    qtmaterialinputchip_p.h \
+    qtmaterialinputtimepicker.h \
+    qtmaterialinputtimepicker_p.h \
     qtmateriallist.h \
     qtmateriallist_p.h \
     qtmateriallistitem.h \
@@ -168,6 +221,10 @@ HEADERS = $$PWD/qtmaterialdockedtoolbar.h \
     qtmaterialmenu.h \
     qtmaterialmenu_internal.h \
     qtmaterialmenu_p.h \
+    qtmaterialmodalbottomsheet.h \
+    qtmaterialmodalbottomsheet_p.h \
+    qtmaterialnavigationbadgeintegration.h \
+    qtmaterialnavigationbadgeintegration_p.h \
     qtmaterialnavigationbar.h \
     qtmaterialnavigationbar_p.h \
     qtmaterialnavigationrail.h \
@@ -194,8 +251,10 @@ HEADERS = $$PWD/qtmaterialdockedtoolbar.h \
     qtmaterialsearchappbar_p.h \
     qtmaterialsearchfield.h \
     qtmaterialsearchfield_p.h \
+    qtmaterialsearchsuggestionmodel.h \
     qtmaterialsearchview.h \
     qtmaterialsearchview_p.h \
+    qtmaterialsearchviewitems.h \
     qtmaterialsegmentedbutton.h \
     qtmaterialsegmentedbutton_p.h \
     qtmaterialsidesheet.h \
@@ -212,8 +271,12 @@ HEADERS = $$PWD/qtmaterialdockedtoolbar.h \
     qtmaterialspeeddial_p.h \
     qtmaterialsplitbutton.h \
     qtmaterialsplitbutton_p.h \
+    qtmaterialstandardbottomsheet.h \
+    qtmaterialstandardbottomsheet_p.h \
     qtmaterialstepper.h \
     qtmaterialstepper_p.h \
+    qtmaterialsuggestionchip.h \
+    qtmaterialsuggestionchip_p.h \
     qtmaterialtable.h \
     qtmaterialtable_p.h \
     qtmaterialtabs.h \
@@ -222,6 +285,8 @@ HEADERS = $$PWD/qtmaterialdockedtoolbar.h \
     qtmaterialtextfield.h \
     qtmaterialtextfield_internal.h \
     qtmaterialtextfield_p.h \
+    qtmaterialtimefield.h \
+    qtmaterialtimefield_p.h \
     qtmaterialtimepicker.h \
     qtmaterialtimepicker_p.h \
     qtmaterialtoggle.h \
